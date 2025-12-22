@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "posts/fuwari.md",
+                "file": "posts/eo-umami.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "fuwari"
+              "title": "eo-umami"
             }
           }
         ]
@@ -171,6 +171,11 @@
   },
   "active": "96b79d1156396696",
   "lastOpenFiles": [
+    "assets/images/eo-umami-2.png",
+    "assets/images/eo-umami-1.png",
+    "assets/images/eo-umami.png",
+    "posts/fuwari.md",
+    "posts/eo-umami.md",
     "posts/ddos-6t.md",
     "assets/images/3c33b054a3180932ae87bea8bd06c3ed.png",
     "assets/images/d16b7b134dec1224dcfc16e59a21942f.png",
@@ -180,8 +185,6 @@
     "assets/images/5a86eb051d48615259e8dcecb0fe8185.png",
     "assets/images/c4b6bdd2c39ae7585b9d3ecc5dbe9c6d.png",
     "assets/images/5b3bcf42d0e4f73fbe031699a291a5c2.png",
-    "assets/images/9318872dc53b38334312619b2373c81e.jpg",
-    "assets/images/01f15a24f395a3731010c8046cb2008c.png",
     "posts/py-uploadserver.md",
     "posts/umami-migration.md",
     "posts/serverless-function.md",
@@ -203,8 +206,6 @@
     "posts/mobile-git.md",
     "posts/check-notebook.md",
     "posts/unknown-upload.md",
-    "posts/zte-f450-bridge.md",
-    "posts/hook-steam-drm.md",
-    "posts/163-free-domain-email.md"
+    "posts/zte-f450-bridge.md"
   ]
 }
