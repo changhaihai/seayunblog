@@ -2,22 +2,20 @@
 title: "🔥 发卡系统首选：EMSHOP 功能全解析，适配各类虚拟商品场景"
 published: 2025-01-10T18:00:00
 description: "功能全面、部署简单的开源发卡系统。EMSHOP 支持多模板切换、自动发货与全品类管理，为虚拟商品展示与交易提供一站式解决方案。"
-image: "/assets/images/emshop-banner.png"   # 页面封面（大图），请替换为实际 banner
-tags: [EMSHOP, 开源���卡系统, 虚拟商品系统, PHP工具, 技术工具]
+image: "/assets/images/emshop-banner.png"
+tags: [EMSHOP, 开源发卡系统, 虚拟商品系统, PHP工具, 技术工具]
 draft: false
 lang: "zh-CN"
 category: "工具推荐"
 cover: true
 ---
 
-<!-- LOGO 区：封面与 logo 已分开；logo 使用内置路径 /assets/images/emlogo.png，并在 onerror 中防止循环 -->
+<!-- LOGO 区：封面与 logo 已分开；logo 使用站点根路径 /assets/images/emlogo.png，并在 onerror 中防止循环 -->
 <div align="center" style="margin-bottom:24px;">
   <div style="background:#2196F3;width:56px;height:56px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;overflow:hidden;">
-    <!-- 使用内置图片路径 /assets/images/emlogo.png（已确认为内置路径） -->
-    <!-- onerror 中先置 null 防止循环；备用为在线占位或本地备用图（按需替换） -->
     <img src="../assets/images/emlogo.png" alt="EMSHOP LOGO"
-         style="height:36px; width:auto; object-fit:contain; display:block;"
-         onerror="this.onerror=null; this.src='https://picsum.photos/seed/emlogo/120/120';">
+         style="height:36px;width:auto;object-fit:contain;display:block;"
+         onerror="this.onerror=null; this.src='../assets/images/emlogo.png'; this.style.objectFit='contain';">
   </div>
   <h2 style="font-size:22px;color:#2d3748;margin:0 0 8px;">EMSHOP</h2>
   <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:8px;">
@@ -29,12 +27,14 @@ cover: true
 </div>
 
 在虚拟商品（激活码、CDK、会员资格、数字资源等）的展示与交易场景中，一款稳定、高效且易扩展的发卡系统能显著提升用户和运营体验。EMSHOP 作为开源社区中的优质选项，凭借功能全面、部署简单与灵活定制，广受好评。下面我们来逐项解析它的核心亮点与适用场景。
+
 ## 💴 站长收益
 
 <div style="max-width:800px;margin:20px auto;padding:0 12px;">
   <div style="background:#fff;border-radius:10px;padding:12px;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
     <h4 style="color:#2d3748;margin:0 0 8px;font-size:16px;font-weight:600;">分站专属模板</h4>
-    <img src="../assets/images/emshop-收益截图.png" alt="EMSHOP 分站模板" style="width:100%;height:auto;border-radius:8px;display:block;" onerror="this.onerror=null;this.src='https://picsum.photos/seed/subsite/800/450';this.style.objectFit='contain';">
+    <img src="../assets/images/emshop-收益截图.png" alt="EMSHOP 收益截图" style="width:100%;height:auto;border-radius:8px;display:block;"
+         onerror="this.onerror=null; this.src='../assets/images/emshop-收益截图.png'; this.style.objectFit='contain';">
     <p style="margin:10px 0 0 0;color:#4a5568;font-size:14px;">适配场景：多站点运营、子品牌独立展示与管理</p>
   </div>
 </div>
@@ -44,15 +44,18 @@ EMSHOP 内置多套精致模板，适配不同商品展示场景，支持一键�
 
 <div style="max-width:800px;margin:20px auto;padding:0 12px;">
   <div style="margin-bottom:18px;background:#fff;border-radius:10px;padding:12px;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
-    <img src="../assets/images/emshop-模板1.png" alt="EMSHOP 模板 1" style="width:100%;height:auto;border-radius:8px;display:block;" onerror="this.onerror=null;this.src='https://picsum.photos/seed/template1/800/450';this.style.objectFit='contain';">
+    <img src="../assets/images/emshop-模板1.png" alt="EMSHOP 模板 1" style="width:100%;height:auto;border-radius:8px;display:block;"
+         onerror="this.onerror=null; this.src='../assets/images/emshop-模板1.png'; this.style.objectFit='contain';">
   </div>
 
   <div style="margin-bottom:18px;background:#fff;border-radius:10px;padding:12px;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
-    <img src="../assets/images/emshop-模板2.png" alt="EMSHOP 模板 2" style="width:100%;height:auto;border-radius:8px;display:block;" onerror="this.onerror=null;this.src='https://picsum.photos/seed/template2/800/450';this.style.objectFit='contain';">
+    <img src="../assets/images/emshop-模板2.png" alt="EMSHOP 模板 2" style="width:100%;height:auto;border-radius:8px;display:block;"
+         onerror="this.onerror=null; this.src='../assets/images/emshop-模板2.png'; this.style.objectFit='contain';">
   </div>
 
   <div style="margin-bottom:18px;background:#fff;border-radius:10px;padding:12px;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
-    <img src="../assets/images/emshop-模板3.png" alt="EMSHOP 模板 3" style="width:100%;height:auto;border-radius:8px;display:block;" onerror="this.onerror=null;this.src='https://picsum.photos/seed/template3/800/450';this.style.objectFit='contain';">
+    <img src="../assets/images/emshop-模板3.png" alt="EMSHOP 模板 3" style="width:100%;height:auto;border-radius:8px;display:block;"
+         onerror="this.onerror=null; this.src='../assets/images/emshop-模板3.png'; this.style.objectFit='contain';">
   </div>
 </div>
 
@@ -62,7 +65,8 @@ EMSHOP 提供分站模板，适合多品牌或多站点运营场景，可独立�
 <div style="max-width:800px;margin:20px auto;padding:0 12px;">
   <div style="background:#fff;border-radius:10px;padding:12px;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
     <h4 style="color:#2d3748;margin:0 0 8px;font-size:16px;font-weight:600;">分站专属模板</h4>
-    <img src="../assets/images/emshop-分站.png" alt="EMSHOP 分站模板" style="width:100%;height:auto;border-radius:8px;display:block;" onerror="this.onerror=null;this.src='https://picsum.photos/seed/subsite/800/450';this.style.objectFit='contain';">
+    <img src="../assets/images/emshop-分站.png" alt="EMSHOP 分站模板" style="width:100%;height:auto;border-radius:8px;display:block;"
+         onerror="this.onerror=null; this.src='../assets/images/emshop-分站.png'; this.style.objectFit='contain';">
     <p style="margin:10px 0 0 0;color:#4a5568;font-size:14px;">适配场景：多站点运营、子品牌独立展示与管理</p>
   </div>
 </div>
@@ -107,13 +111,18 @@ EMSHOP 以“实用、高效、灵活”为设计理念，覆盖虚拟商品管�
 
 ---
 
-<!--
-说明与注意事项（简短）：
-1. 你说 /assets/images/emlogo.png 是内置图片路径：已在 img src 中使用该绝对路径，确保构建后该路径能被访问（例如 https://yourdomain.com/assets/images/emlogo.png 返回 200）。
-2. onerror 里使用了 this.onerror=null 防止重复触发；备用图为 picsum 在线占位（也可以替换为你项目内的 /assets/images/emlogo-fallback.png）。
-3. 若��显示为大图，请确认 frontmatter 的 image（封面）不是指向同一文件（必须使用独立 banner）；当前 frontmatter 已指向 /assets/images/emshop-banner.png。
-4. 若需要把占位替换为本地备用图，请把文件上传到 /assets/images/emlogo-fallback.png，并将 onerror 中的 URL 改为该路径。
-
-快速检查：
-- 在���览器打开 https://yourdomain.com/assets/images/emlogo.png（或本地预览对应路径），看是否能直接访问图片且尺寸正常。
+<!-- 部署与调试说明（请阅读并执行）：
+1) 确保下列图片文件已部署到你站点的 /assets/images/ 目录：
+   - emshop-banner.png
+   - emlogo.png
+   - emlogo-fallback.png  （备用图，若没有可先用在线占位替代）
+   - emshop-收益截图.png
+   - emshop-模板1.png / emshop-模板2.png / emshop-模板3.png
+   - template1-fallback.png / template2-fallback.png / template3-fallback.png
+   - emshop-subsite-fallback.png / emshop-snapshot-fallback.png
+2) 在浏览器地址栏测试：访问 https://yourdomain.com/assets/images/emlogo.png（替换为你真实域名），应返回 200 并显示图片。
+3) 如果你的网站部署在子路径（例如 GitHub Pages 的 https://username.github.io/repo/），请把 img 的 src 改为完整 URL：
+   例如： https://username.github.io/repo/assets/images/emlogo.png
+   或在 Jekyll/Hugo 中使用 site.baseurl 等变量替代。
+4) 如果仍显示破图（浏览器显示小破图标），按 F12 → Network 查看该图片请求的 URL 与返回码（将 URL / 返回码截图或粘贴给我，我帮你看）。
 -->
