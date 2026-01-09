@@ -10,10 +10,10 @@ category: '工具推荐'
 cover: true
 ---
 
-<!-- LOGO区域：尺寸合适，仅展示一个 -->
+<!-- LOGO区域：修复尺寸过大问题，优化样式 -->
 <div align="center" style="margin-bottom: 30px;">
-  <div style="background: #2196F3; width: 80px; height: 80px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px;">
-    <img src="../assets/images/emlogo.png" alt="EMSHOP官方LOGO" style="width: 50px; height: auto; this.style.objectFit='contain';">
+  <div style="background: #2196F3; width: 60px; height: 60px; border-radius: 6px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px;">
+    <img src="../assets/images/emlogo.png" alt="EMSHOP官方LOGO" style="width: 36px; height: auto; object-fit: contain;">
   </div>
   <h2 style="font-size: 24px; color: #2d3748; margin: 0 0 8px 0;">EMSHOP</h2>
   <div style="display: flex; gap: 6px; justify-content: center; flex-wrap: wrap; margin-bottom: 8px;">
@@ -36,22 +36,25 @@ EMSHOP内置多套精致模板，适配不同虚拟商品的展示场景：
   <!-- 模板1 -->
   <div style="margin-bottom: 25px; background: #fff; border-radius: 10px; padding: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
     <img src="../assets/images/emshop-模板1.png" 
+         alt="EMSHOP模板1"
          style="width: 100%; height: auto; border-radius: 8px; display: block;"
-         onerror="this.src='../assets/images/emshop-模板1.png'; this.style.objectFit='contain';">
+         onerror="this.src='https://picsum.photos/seed/template1/800/450'; this.style.objectFit='contain';">
   </div>
 
   <!-- 模板2 -->
   <div style="margin-bottom: 25px; background: #fff; border-radius: 10px; padding: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
     <img src="../assets/images/emshop-模板2.png" 
+         alt="EMSHOP模板2"
          style="width: 100%; height: auto; border-radius: 8px; display: block;"
-         onerror="this.src='../assets/images/emshop-模板2.png'; this.style.objectFit='contain';">
+         onerror="this.src='https://picsum.photos/seed/template2/800/450'; this.style.objectFit='contain';">
   </div>
 
   <!-- 模板3 -->
   <div style="margin-bottom: 25px; background: #fff; border-radius: 10px; padding: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
     <img src="../assets/images/emshop-模板3.png" 
+         alt="EMSHOP模板3"
          style="width: 100%; height: auto; border-radius: 8px; display: block;"
-         onerror="../assets/images/emshop-模板3.png'; this.style.objectFit='contain';">
+         onerror="this.src='https://picsum.photos/seed/template3/800/450'; this.style.objectFit='contain';">
   </div>
 </div>
 
@@ -65,7 +68,7 @@ EMSHOP同样提供专业的分站模板，满足多站点运营需求：
     <img src="../assets/images/emshop-分站.png" 
          alt="EMSHOP分站模板" 
          style="width: 100%; height: auto; border-radius: 8px; display: block;"
-         onerror="this.src='../assets/images/emshop-分站.png'; this.style.objectFit='contain';">
+         onerror="this.src='https://picsum.photos/seed/subsite/800/450'; this.style.objectFit='contain';">
     <p style="margin: 10px 0 0 0; color: #4a5568; font-size: 14px;">适配场景：多站点运营、子品牌独立展示</p>
   </div>
 </div>
