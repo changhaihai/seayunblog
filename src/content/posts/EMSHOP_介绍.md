@@ -2,22 +2,22 @@
 title: 🔥 0成本当老板！EMSHOP代理躺赚攻略：靠自助分站，我月入2万+
 published: 2025-01-10T18:00:00
 description: 不用囤货、不用技术、不用大额投入！成为EMSHOP代理，10分钟搭建专属发卡分站，多级代理裂变+自动发货，轻松实现被动收入自由～
-image: '../assets/images/emshop-agent-cover.png'
+image: '../assets/images/emlogo.png' # 确保这个封面图路径正确
 tags: [EMSHOP代理, 被动收入项目, 零成本创业, 虚拟商品代理, 赚钱攻略]
 draft: false
 lang: 'zh-CN'
-author: '你的昵称（EMSHOP官方授权代理）'
+author: 'EMSHOP官方授权代理'
 category: '创业干货'
-cover: true # 标记为封面文章（适配博客主题）
+cover: true
 ---
 
+<!--LOGO图片：优先用内联样式确保路径正确 -->
 <div align="center" style="margin-bottom: 30px;">
-  <!-- 匹配原图的LOGO展示 -->
   <div style="background: #2196F3; width: 120px; height: 120px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px;">
-    <span style="color: #fff; font-size: 48px; font-weight: 700; line-height: 1;">EM</span>
+    <!-- 若本地图片仍不显示，可临时用在线CDN图床替代（示例） -->
+    <img src="../assets/images/emlogo.png" alt="EMSHOP官方LOGO" style="width: 80px; height: auto;" onerror="this.src='https://cdn.example.com/emlogo.png';">
   </div>
   <h2 style="font-size: 24px; color: #2d3748; margin: 0 0 10px 0;">EMSHOP</h2>
-  <!-- 匹配原图的技术标签 -->
   <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
     <span style="background: #4a5568; color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 14px;">php 7.4</span>
     <span style="background: #4CAF50; color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 14px;">mysql ≥5.6</span>
@@ -30,8 +30,11 @@ cover: true # 标记为封面文章（适配博客主题）
 
 作为一个踩过无数坑的创业者，我深知“低风险、高回报”的项目有多难寻！直到成为 <strong style="color: #2196F3;">EMSHOP发卡系统代理</strong>，我才真正实现“边玩边赚”——不用囤货、不用懂技术、不用熬夜守单，靠系统的自助分站功能，搭建专属发卡平台，发展下级代理裂变，现在每月被动收入稳定2万+，今天就把这份保姆级代理攻略分享给你！
 
-![我的EMSHOP代理收益截图](../assets/images/emshop-agent-income.png)
-> 真实收益截图（脱敏处理），仅代表个人成绩，用心运营均可实现可观收入～
+<!-- 收益截图显示：添加错误兜底 -->
+<div style="text-align: center; margin: 20px 0;">
+  <img src="../assets/images/emshop-agent-income.png" alt="我的EMSHOP代理收益截图" style="max-width: 80%; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);" onerror="this.src='https://cdn.example.com/emshop-income.png'; this.alt='收益截图示例';">
+  <p style="color: #718096; font-size: 14px; margin-top: 8px;">真实收益截图（脱敏处理），仅代表个人成绩，用心运营均可实现可观收入～</p>
+</div>
 
 ## 🎨 多款精美模板任选，打造专属品牌风格
 成为EMSHOP代理后，无需懂设计，就能一键切换高颜值模板，适配不同虚拟商品品类的风格需求，客户点击进来就有购买欲！
@@ -39,7 +42,7 @@ cover: true # 标记为封面文章（适配博客主题）
 <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin: 20px 0;">
   <!-- 模板1：简约商务风 -->
   <div style="width: 300px; border-radius: 8px; overflow: hidden; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
-    <img src="../assets/images/emshop-template1.png" alt="EMSHOP简约商务风模板" style="width: 100%; height: 180px; object-fit: cover;">
+    <img src="../assets/images/emshop-template1.png" alt="EMSHOP简约商务风模板" style="width: 100%; height: 180px; object-fit: cover;" onerror="this.src='https://cdn.example.com/template1.png';">
     <div style="padding: 12px; background: #fff;">
       <h4 style="color: #2d3748; margin: 0 0 6px 0; font-size: 16px;">简约商务风</h4>
       <p style="color: #718096; margin: 0; font-size: 14px;">适合软件激活码、企业服务类商品</p>
@@ -48,7 +51,7 @@ cover: true # 标记为封面文章（适配博客主题）
   
   <!-- 模板2：潮流游戏风 -->
   <div style="width: 300px; border-radius: 8px; overflow: hidden; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
-    <img src="../assets/images/emshop-template2.png" alt="EMSHOP潮流游戏风模板" style="width: 100%; height: 180px; object-fit: cover;">
+    <img src="../assets/images/emshop-template2.png" alt="EMSHOP潮流游戏风模板" style="width: 100%; height: 180px; object-fit: cover;" onerror="this.src='https://cdn.example.com/template2.png';">
     <div style="padding: 12px; background: #fff;">
       <h4 style="color: #2d3748; margin: 0 0 6px 0; font-size: 16px;">潮流游戏风</h4>
       <p style="color: #718096; margin: 0; font-size: 14px;">适合游戏CDK、游戏道具类商品</p>
@@ -57,7 +60,7 @@ cover: true # 标记为封面文章（适配博客主题）
   
   <!-- 模板3：清新会员风 -->
   <div style="width: 300px; border-radius: 8px; overflow: hidden; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
-    <img src="../assets/images/emshop-template3.png" alt="EMSHOP清新会员风模板" style="width: 100%; height: 180px; object-fit: cover;">
+    <img src="../assets/images/emshop-template3.png" alt="EMSHOP清新会员风模板" style="width: 100%; height: 180px; object-fit: cover;" onerror="this.src='https://cdn.example.com/template3.png';">
     <div style="padding: 12px; background: #fff;">
       <h4 style="color: #2d3748; margin: 0 0 6px 0; font-size: 16px;">清新会员风</h4>
       <p style="color: #718096; margin: 0; font-size: 14px;">适合会员订阅、数字课程类商品</p>
@@ -132,9 +135,8 @@ A：完全可以！官方提供引流教程和推广素材，代理交流群里�
 赶紧添加官方客服QQ：<strong style="color: #e53e3e;">10220739</strong> 申请代理，备注“你的昵称推荐”，优先通过审核，一起躺赚被动收入～
 
 <div align="center" style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e2e8f0;">
-  <!-- 底部LOGO与技术标签 -->
   <div style="background: #2196F3; width: 80px; height: 80px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px;">
-    <span style="color: #fff; font-size: 32px; font-weight: 700; line-height: 1;">EM</span>
+    <img src="../assets/images/emlogo.png" alt="EMSHOP官方LOGO" style="width: 50px; height: auto;" onerror="this.src='https://cdn.example.com/emlogo.png';">
   </div>
   <h3 style="font-size: 18px; color: #2d3748; margin: 0 0 8px 0;">EMSHOP</h3>
   <div style="display: flex; gap: 6px; justify-content: center; flex-wrap: wrap; margin-bottom: 10px;">
