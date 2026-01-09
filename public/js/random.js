@@ -20,8 +20,9 @@
 
 		// Generate new if not exists
 		var num = Math.floor(Math.random() * counts[type]) + 1;
-		var url = domain + "/ri/" + type + "/" + num + ".webp";
-
+		//var url = domain + "/ri/" + type + "/" + num + ".webp";
+		var url = "https://pic.acofork.com/ri/h/478.webp"
+			
 		// Save to session state
 		if (type === "h") sessionRandomH = url;
 		if (type === "v") sessionRandomV = url;
