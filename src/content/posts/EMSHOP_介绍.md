@@ -1,5 +1,5 @@
 ---
-title: 🔥 开源发卡系统首选！EMSHOP功能全解析，适配各类虚拟商品场景
+title: 🔥 发卡系统首选！EMSHOP功能全解析，适配各类虚拟商品场景
 published: 2025-01-10T18:00:00
 description: 一款功能全面、部署简单的开源发卡系统！EMSHOP支持多模板切换、自动发货、全品类管理，为虚拟商品展示与交易提供一站式解决方案～
 image: '../assets/images/emlogo.png'
@@ -10,9 +10,8 @@ category: '工具推荐'
 cover: true
 ---
 
-<!-- 修复LOGO：只显示一个，调整尺寸 -->
+<!-- LOGO区域：尺寸合适，仅展示一个 -->
 <div align="center" style="margin-bottom: 30px;">
-  <!-- 调整LOGO容器和图片尺寸 -->
   <div style="background: #2196F3; width: 80px; height: 80px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px;">
     <img src="../assets/images/emlogo.png" alt="EMSHOP官方LOGO" style="width: 50px; height: auto;" onerror="this.src='https://picsum.photos/seed/emlogo/50/50'; this.style.objectFit='contain';">
   </div>
@@ -30,54 +29,44 @@ cover: true
 在虚拟商品（激活码、CDK、会员资格、数字资源等）的展示与交易场景中，一款稳定、高效且易扩展的发卡系统能大幅提升使用体验。EMSHOP作为开源领域的优质选择，凭借全面的功能、简洁的部署流程和灵活的定制性，成为众多用户的首选工具，今天就为大家详细解析这款实用系统的核心亮点。
 
 ## 🎨 多风格模板展示
-EMSHOP内置多套精致模板，适配不同虚拟商品的展示场景，所有模板横向一排完整展示：
+EMSHOP内置多套精致模板，适配不同虚拟商品的展示场景：
 
-<!-- 核心：强制横向一排展示完整图片 -->
-<div style="width: 100%; overflow-x: auto; margin: 20px 0; padding: 10px 0; scrollbar-width: thin; scrollbar-color: #2196F3 #f5f5f5;">
-  <div style="display: flex; justify-content: flex-start; align-items: flex-start; gap: 15px; width: fit-content; margin: 0 auto;">
-    <!-- 模板1：简约商务风 -->
-    <div style="flex: 0 0 auto; width: 400px;">
-      <img src="../assets/images/emshop-模板1.png" 
-           alt="EMSHOP简约商务风模板" 
-           style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: all 0.3s ease;"
-           onerror="this.src='https://picsum.photos/seed/template1/800/450'; this.style.objectFit='contain';">
-      <p style="text-align: center; margin: 8px 0 0 0; color: #4a5568; font-size: 15px;">简约商务风 · 适配软件激活码/企业服务</p>
-    </div>
+<!-- 竖向单列展示模板 -->
+<div style="max-width: 800px; margin: 20px auto; padding: 0 15px;">
+  <!-- 模板1 -->
+  <div style="margin-bottom: 25px; background: #fff; border-radius: 10px; padding: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+    <img src="../assets/images/emshop-模板1.png" 
+         style="width: 100%; height: auto; border-radius: 8px; display: block;"
+         onerror="this.src='https://picsum.photos/seed/template1/800/450'; this.style.objectFit='contain';">
+  </div>
 
-    <!-- 模板2：潮流游戏风 -->
-    <div style="flex: 0 0 auto; width: 400px;">
-      <img src="../assets/images/emshop-模板2.png" 
-           alt="EMSHOP潮流游戏风模板" 
-           style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: all 0.3s ease;"
-           onerror="this.src='https://picsum.photos/seed/template2/800/450'; this.style.objectFit='contain';">
-      <p style="text-align: center; margin: 8px 0 0 0; color: #4a5568; font-size: 15px;">潮流游戏风 · 适配游戏CDK/游戏道具</p>
-    </div>
+  <!-- 模板2 -->
+  <div style="margin-bottom: 25px; background: #fff; border-radius: 10px; padding: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+    <img src="../assets/images/emshop-模板2.png" 
+         style="width: 100%; height: auto; border-radius: 8px; display: block;"
+         onerror="this.src='https://picsum.photos/seed/template2/800/450'; this.style.objectFit='contain';">
+  </div>
 
-    <!-- 模板3：清新会员风 -->
-    <div style="flex: 0 0 auto; width: 400px;">
-      <img src="../assets/images/emshop-模板3.png" 
-           alt="EMSHOP清新会员风模板" 
-           style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: all 0.3s ease;"
-           onerror="this.src='https://picsum.photos/seed/template3/800/450'; this.style.objectFit='contain';">
-      <p style="text-align: center; margin: 8px 0 0 0; color: #4a5568; font-size: 15px;">清新会员风 · 适配会员订阅/数字课程</p>
-    </div>
+  <!-- 模板3 -->
+  <div style="margin-bottom: 25px; background: #fff; border-radius: 10px; padding: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+    <img src="../assets/images/emshop-模板3.png" 
+         style="width: 100%; height: auto; border-radius: 8px; display: block;"
+         onerror="this.src='https://picsum.photos/seed/template3/800/450'; this.style.objectFit='contain';">
   </div>
 </div>
 
 ## 🎨 分站模板展示
 EMSHOP同样提供专业的分站模板，满足多站点运营需求：
 
-<!-- 分站模板横向展示 -->
-<div style="width: 100%; overflow-x: auto; margin: 20px 0; padding: 10px 0; scrollbar-width: thin; scrollbar-color: #2196F3 #f5f5f5;">
-  <div style="display: flex; justify-content: flex-start; align-items: flex-start; gap: 15px; width: fit-content; margin: 0 auto;">
-    <!-- 分站模板 -->
-    <div style="flex: 0 0 auto; width: 400px;">
-      <img src="../assets/images/emshop-分站.png" 
-           alt="EMSHOP分站模板" 
-           style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: all 0.3s ease;"
-           onerror="this.src='../assets/images/emshop-分站.png'; this.style.objectFit='contain';">
-      <p style="text-align: center; margin: 8px 0 0 0; color: #4a5568; font-size: 15px;">分站专属模板 · 适配多站点运营场景</p>
-    </div>
+<!-- 竖向展示分站模板 -->
+<div style="max-width: 800px; margin: 20px auto; padding: 0 15px;">
+  <div style="background: #fff; border-radius: 10px; padding: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+    <h4 style="color: #2d3748; margin: 0 0 10px 0; font-size: 16px; font-weight: 600;">分站专属模板</h4>
+    <img src="../assets/images/emshop-分站.png" 
+         alt="EMSHOP分站模板" 
+         style="width: 100%; height: auto; border-radius: 8px; display: block;"
+         onerror="this.src='https://picsum.photos/seed/subsite/800/450'; this.style.objectFit='contain';">
+    <p style="margin: 10px 0 0 0; color: #4a5568; font-size: 14px;">适配场景：多站点运营、子品牌独立展示</p>
   </div>
 </div>
 
