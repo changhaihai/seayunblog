@@ -25,62 +25,41 @@ try {
 }
 ---
 
-  
-<div class="border-t border-black/10 dark:border-white/15 my-10 border-dashed mx-4 md:mx-32"></div>
-<div class="card-base w-fit mx-auto rounded-xl mt-4 mb-8 p-1 bg-gradient-to-br from-white/90 to-white/70 dark:from-gray-900/90 dark:to-gray-800/70 backdrop-blur-sm shadow-md hover:shadow-lg transition-all duration-300">
-    <div class="text-sm text-center p-8 text-gray-700 dark:text-gray-300">
-        <!-- 版权信息 -->
-        <p class="mb-2 leading-relaxed">
-            &copy; <span id="copyright-year">2024 - {currentYear}</span> 
-            <a class="link text-primary font-medium hover:text-primary/80 transition-colors duration-200" target="_blank" href="https://space.bilibili.com/325903362">
-                {profileConfig.name}
-            </a>，采用
+ <div class="border-t border-black/10 dark:border-white/15 my-10 border-dashed mx-4 md:mx-32"></div>
+<div class="card-base w-fit mx-auto rounded-xl mt-4 mb-8 p-6 sm:p-8 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm shadow-sm hover:shadow-md transition-all duration-300">
+    <div class="text-sm text-center text-gray-700 dark:text-gray-300 space-y-3">
+        <!-- 版权信息行 -->
+        <p class="leading-relaxed m-0">
+            &copy; 2024 - 2026 Detector，采用
             <a class="link text-primary font-medium hover:text-primary/80 transition-colors duration-200" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
                 CC BY-NC-SA 4.0
             </a> 许可
         </p>
 
-        <!-- 功能链接 -->
-        <p class="mb-3 flex flex-wrap justify-center gap-x-2 gap-y-1">
-            <a class="link text-primary font-medium hover:text-primary/80 transition-colors duration-200" target="_blank" href={url('rss.xml')}>RSS</a>
-            <span class="text-gray-500 dark:text-gray-400">/</span>
-            <a class="link text-primary font-medium hover:text-primary/80 transition-colors duration-200" target="_blank" href={url('sitemap-index.xml')}>网站地图</a>
+        <!-- RSS/网站地图行 - 优化分隔符和间距 -->
+        <p class="m-0 flex items-center justify-center gap-2">
+            <a class="link text-primary font-medium hover:text-primary/80 transition-colors duration-200" target="_blank" href="/rss.xml">RSS</a>
+            <span class="text-gray-400 dark:text-gray-500">/</span>
+            <a class="link text-primary font-medium hover:text-primary/80 transition-colors duration-200" target="_blank" href="/sitemap-index.xml">网站地图</a>
         </p>
 
-        <!-- 技术驱动 -->
-        <p class="mb-3 leading-relaxed">
+        <!-- 技术驱动行 -->
+        <p class="leading-relaxed m-0">
             由
-            <a class="link text-primary font-medium hover:text-primary/80 transition-colors duration-200" target="_blank" href="https://astro.build">Astro</a> 
-            <span class="text-gray-500 dark:text-gray-400">和</span>
-            <a class="link text-primary font-medium hover:text-primary/80 transition-colors duration-200" target="_blank" href="https://github.com/saicaca/fuwari">Fuwari</a> 
-            <span class="inline-block animate-pulse">强力驱动</span>
+            <a class="link text-primary font-medium hover:text-primary/80 transition-colors duration-200" target="_blank" href="https://astro.build">Astro</a>
+            和
+            <a class="link text-primary font-medium hover:text-primary/80 transition-colors duration-200" target="_blank" href="https://github.com/saicaca/fuwari">Fuwari</a>
+            强力驱动
         </p>
 
-        <!-- 提交信息 -->
-        <p class="mb-4 text-xs text-gray-500 dark:text-gray-400 hover:text-primary/60 transition-colors duration-200">
-            <a class="link" target="_blank" href={`https://github.com/afoim/fuwari/commit/${commitHash}`}>
-                ({commitHash} @ {buildDate})
-            </a>
+        <!-- 提交信息行 - 缩小字号，降低视觉权重 -->
+        <p class="m-0 text-xs text-gray-500 dark:text-gray-400">
+            (8726a69 @ 2026-01-09 16:15:39)
         </p>
 
-        <!-- 备案信息（若启用） -->
-        <!-- <p class="mb-2 flex items-center justify-center text-xs">
-            <a class="link flex items-center text-gray-500 dark:text-gray-400 hover:text-primary transition-colors duration-200" href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank">
-                <img alt="ICP备案图标" src="/favicon/foot-icp.png" class="h-4 mr-1">
-                皖ICP备2025099787号-2
-            </a>
-        </p>
-        <p class="flex items-center justify-center text-xs">
-            <a class="link flex items-center text-gray-500 dark:text-gray-400 hover:text-primary transition-colors duration-200" href="https://beian.mps.gov.cn/#/query/webSearch?code=34010302002608" target="_blank">
-                <img alt="公安备案图标" src="/favicon/foot-ga.png" class="h-4 mr-1">
-                皖公网安备34010302002608号
-            </a>
-        </p> -->
-
-        <!-- 服务器信息 -->
-        <div class="server-info-wrapper flex items-center justify-center mt-3 text-xs text-gray-500 dark:text-gray-400">
-            <span class="server-info"></span>
-            <img class="server-icon h-5 ml-1 bg-white rounded p-0.5 shadow-sm hover:scale-110 transition-transform duration-200" alt="Server Icon">
+        <!-- Cloudflare图标行 - 居中对齐，增加间距 -->
+        <div class="flex items-center justify-center mt-2">
+            <img class="h-5 w-auto opacity-70 hover:opacity-100 transition-opacity duration-200" alt="Cloudflare" src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/9.18.0/cloudflare.svg">
         </div>
     </div>
 </div>
