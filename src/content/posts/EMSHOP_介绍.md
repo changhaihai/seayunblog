@@ -32,7 +32,7 @@ cover: true
 
 <!-- 收益截图显示：添加错误兜底 -->
 <div style="text-align: center; margin: 20px 0;">
-  <img src="../assets/images/emshop-agent-income.png" alt="我的EMSHOP代理收益截图" style="max-width: 80%; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);" onerror="this.src='https://cdn.example.com/emshop-income.png'; this.alt='收益截图示例';">
+  <img src="../assets/images/收益截图.png" alt="我的EMSHOP代理收益截图" style="max-width: 80%; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);" onerror="this.src='https://cdn.example.com/emshop-income.png'; this.alt='收益截图示例';">
   <p style="color: #718096; font-size: 14px; margin-top: 8px;">真实收益截图（脱敏处理），仅代表个人成绩，用心运营均可实现可观收入～</p>
 </div>
 
@@ -42,7 +42,7 @@ cover: true
 <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin: 20px 0;">
   <!-- 模板1：简约商务风 -->
   <div style="width: 300px; border-radius: 8px; overflow: hidden; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
-    <img src="../assets/images/emshop-template1.png" alt="EMSHOP简约商务风模板" style="width: 100%; height: 180px; object-fit: cover;" onerror="this.src='https://cdn.example.com/template1.png';">
+    <img src="../assets/images/emshop-模板1.png" alt="EMSHOP简约商务风模板" style="width: 100%; height: 180px; object-fit: cover;" onerror="this.src='https://cdn.example.com/template1.png';">
     <div style="padding: 12px; background: #fff;">
       <h4 style="color: #2d3748; margin: 0 0 6px 0; font-size: 16px;">简约商务风</h4>
       <p style="color: #718096; margin: 0; font-size: 14px;">适合软件激活码、企业服务类商品</p>
@@ -51,7 +51,7 @@ cover: true
   
   <!-- 模板2：潮流游戏风 -->
   <div style="width: 300px; border-radius: 8px; overflow: hidden; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
-    <img src="../assets/images/emshop-template2.png" alt="EMSHOP潮流游戏风模板" style="width: 100%; height: 180px; object-fit: cover;" onerror="this.src='https://cdn.example.com/template2.png';">
+    <img src="../assets/images/emshop-模板2.png" alt="EMSHOP潮流游戏风模板" style="width: 100%; height: 180px; object-fit: cover;" onerror="this.src='https://cdn.example.com/template2.png';">
     <div style="padding: 12px; background: #fff;">
       <h4 style="color: #2d3748; margin: 0 0 6px 0; font-size: 16px;">潮流游戏风</h4>
       <p style="color: #718096; margin: 0; font-size: 14px;">适合游戏CDK、游戏道具类商品</p>
@@ -60,7 +60,7 @@ cover: true
   
   <!-- 模板3：清新会员风 -->
   <div style="width: 300px; border-radius: 8px; overflow: hidden; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
-    <img src="../assets/images/emshop-template3.png" alt="EMSHOP清新会员风模板" style="width: 100%; height: 180px; object-fit: cover;" onerror="this.src='https://cdn.example.com/template3.png';">
+    <img src="../assets/images/emshop-模板3.png" alt="EMSHOP清新会员风模板" style="width: 100%; height: 180px; object-fit: cover;" onerror="this.src='https://cdn.example.com/template3.png';">
     <div style="padding: 12px; background: #fff;">
       <h4 style="color: #2d3748; margin: 0 0 6px 0; font-size: 16px;">清新会员风</h4>
       <p style="color: #718096; margin: 0; font-size: 14px;">适合会员订阅、数字课程类商品</p>
