@@ -133,7 +133,7 @@ function getProxyPrefix(hostname) {
 
 # 针对于A、AAAA、CNAME（SaaS接入）
 
-> 我们需要**两个域名**（比如：onani.cn和acofork.cn）。
+> 我们需要**一个域名或两个域名**（单域名直接用子域名即可。双域名比如：onani.cn和acofork.cn）。
 > 
 > **如果在同一CF账号下不可用，请尝试将俩域名放置在不同账号**
 
