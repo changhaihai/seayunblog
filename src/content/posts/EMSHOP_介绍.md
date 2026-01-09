@@ -10,54 +10,73 @@ category: '工具推荐'
 cover: true
 ---
 
-<!--LOGO图片：优先用内联样式确保路径正确 -->
+<!-- 修复LOGO：只显示一个，调整尺寸 -->
 <div align="center" style="margin-bottom: 30px;">
-  <div style="background: #2196F3; width: 120px; height: 120px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px;">
-    <img src="../assets/images/emlogo.png" alt="EMSHOP官方LOGO" style="width: 80px; height: auto;" onerror="this.src='https://cdn.example.com/emlogo.png';">
+  <!-- 调整LOGO容器和图片尺寸 -->
+  <div style="background: #2196F3; width: 80px; height: 80px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px;">
+    <img src="../assets/images/emlogo.png" alt="EMSHOP官方LOGO" style="width: 50px; height: auto;" onerror="this.src='https://picsum.photos/seed/emlogo/50/50'; this.style.objectFit='contain';">
   </div>
-  <h2 style="font-size: 24px; color: #2d3748; margin: 0 0 10px 0;">EMSHOP</h2>
-  <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
-    <span style="background: #4a5568; color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 14px;">php 7.4</span>
-    <span style="background: #4CAF50; color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 14px;">mysql ≥5.6</span>
-    <span style="background: #2196F3; color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 14px;">license GPLv3</span>
+  <h2 style="font-size: 24px; color: #2d3748; margin: 0 0 8px 0;">EMSHOP</h2>
+  <div style="display: flex; gap: 6px; justify-content: center; flex-wrap: wrap; margin-bottom: 8px;">
+    <span style="background: #4a5568; color: #fff; padding: 3px 6px; border-radius: 3px; font-size: 12px;">php 7.4</span>
+    <span style="background: #4CAF50; color: #fff; padding: 3px 6px; border-radius: 3px; font-size: 12px;">mysql ≥5.6</span>
+    <span style="background: #2196F3; color: #fff; padding: 3px 6px; border-radius: 3px; font-size: 12px;">license GPLv3</span>
   </div>
-  <p style="color: #4a5568; font-size: 16px; margin-top: 15px;">开源发卡系统 · 虚拟商品交易解决方案</p>
+  <p style="color: #4a5568; font-size: 14px; margin: 0;">开源发卡系统 · 虚拟商品交易解决方案</p>
 </div>
 
-<br
+<br/>
 
 在虚拟商品（激活码、CDK、会员资格、数字资源等）的展示与交易场景中，一款稳定、高效且易扩展的发卡系统能大幅提升使用体验。EMSHOP作为开源领域的优质选择，凭借全面的功能、简洁的部署流程和灵活的定制性，成为众多用户的首选工具，今天就为大家详细解析这款实用系统的核心亮点。
 
-## 🎨 多风格模板展示（一排布局）
-EMSHOP内置多套精致模板，适配不同虚拟商品的展示场景，以下模板横向一排展示：
+## 🎨 多风格模板展示
+EMSHOP内置多套精致模板，适配不同虚拟商品的展示场景，所有模板横向一排完整展示：
 
-<!-- 修复图片比例+一排布局 -->
-<div style="display: flex; flex-wrap: nowrap; gap: 20px; overflow-x: auto; padding: 20px 0; margin: 10px 0; scrollbar-width: thin;">
-  <!-- 模板1：简约商务风 -->
-  <div style="min-width: 420px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.08); background: #fff;">
-    <!-- 调整object-fit为contain，确保图片完整显示 -->
-    <img src="../assets/images/emshop-模板1.png" alt="EMSHOP简约商务风模板" style="width: 100%; height: 500px; object-fit: contain; background: #f5f5f5;">
-    <div style="padding: 16px; text-align: center;">
-      <h4 style="color: #2d3748; margin: 0 0 8px 0; font-size: 18px; font-weight: 600;">简约商务风</h4>
-      <p style="color: #718096; margin: 0; font-size: 15px;">适配：软件激活码、企业服务类商品</p>
+<!-- 核心：强制横向一排展示完整图片 -->
+<div style="width: 100%; overflow-x: auto; margin: 20px 0; padding: 10px 0; scrollbar-width: thin; scrollbar-color: #2196F3 #f5f5f5;">
+  <div style="display: flex; justify-content: flex-start; align-items: flex-start; gap: 15px; width: fit-content; margin: 0 auto;">
+    <!-- 模板1：简约商务风 -->
+    <div style="flex: 0 0 auto; width: 400px;">
+      <img src="../assets/images/emshop-模板1.png" 
+           alt="EMSHOP简约商务风模板" 
+           style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: all 0.3s ease;"
+           onerror="this.src='https://picsum.photos/seed/template1/800/450'; this.style.objectFit='contain';">
+      <p style="text-align: center; margin: 8px 0 0 0; color: #4a5568; font-size: 15px;">简约商务风 · 适配软件激活码/企业服务</p>
+    </div>
+
+    <!-- 模板2：潮流游戏风 -->
+    <div style="flex: 0 0 auto; width: 400px;">
+      <img src="../assets/images/emshop-模板2.png" 
+           alt="EMSHOP潮流游戏风模板" 
+           style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: all 0.3s ease;"
+           onerror="this.src='https://picsum.photos/seed/template2/800/450'; this.style.objectFit='contain';">
+      <p style="text-align: center; margin: 8px 0 0 0; color: #4a5568; font-size: 15px;">潮流游戏风 · 适配游戏CDK/游戏道具</p>
+    </div>
+
+    <!-- 模板3：清新会员风 -->
+    <div style="flex: 0 0 auto; width: 400px;">
+      <img src="../assets/images/emshop-模板3.png" 
+           alt="EMSHOP清新会员风模板" 
+           style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: all 0.3s ease;"
+           onerror="this.src='https://picsum.photos/seed/template3/800/450'; this.style.objectFit='contain';">
+      <p style="text-align: center; margin: 8px 0 0 0; color: #4a5568; font-size: 15px;">清新会员风 · 适配会员订阅/数字课程</p>
     </div>
   </div>
+</div>
 
-  <!-- 模板2：潮流游戏风 -->
-  <div style="min-width: 420px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.08); background: #fff;">
-    <img src="../assets/images/emshop-模板2.png" alt="EMSHOP潮流游戏风模板" style="width: 100%; height: 500px; object-fit: contain; background: #f5f5f5;">
-    <div style="padding: 16px; text-align: center;">
-      <h4 style="color: #2d3748; margin: 0 0 8px 0; font-size: 18px; font-weight: 600;">潮流游戏风</h4>
-      <p style="color: #718096; margin: 0; font-size: 15px;">适配：游戏CDK、游戏道具类商品</p>
-    </div>
-  </div>
+## 🎨 分站模板展示
+EMSHOP同样提供专业的分站模板，满足多站点运营需求：
 
-  <!-- 模板3：清新会员风 -->
-  <div style="min-width: 420px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.08); background: #fff;">
-    <img src="../assets/images/emshop-模板3.png" alt="EMSHOP清新会员风模板" style="width: 100%; height: 500px; object-fit: contain; background: #f5f5f5;">
-    <div style="padding: 16px; text-align: center;">
-      <h4 style="color: #2d3748; margin: 0 0 8px 0; font-size: 18px; font-weight: 600;">清新会员风</h4>
-      <p style="color: #718096; margin: 0; font-size: 15px;">适配：会员订阅、数字课程类商品</p>
+<!-- 分站模板横向展示 -->
+<div style="width: 100%; overflow-x: auto; margin: 20px 0; padding: 10px 0; scrollbar-width: thin; scrollbar-color: #2196F3 #f5f5f5;">
+  <div style="display: flex; justify-content: flex-start; align-items: flex-start; gap: 15px; width: fit-content; margin: 0 auto;">
+    <!-- 分站模板 -->
+    <div style="flex: 0 0 auto; width: 400px;">
+      <img src="../assets/images/emshop-分站.png" 
+           alt="EMSHOP分站模板" 
+           style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: all 0.3s ease;"
+           onerror="this.src='../assets/images/emshop-分站.png'; this.style.objectFit='contain';">
+      <p style="text-align: center; margin: 8px 0 0 0; color: #4a5568; font-size: 15px;">分站专属模板 · 适配多站点运营场景</p>
     </div>
   </div>
 </div>
