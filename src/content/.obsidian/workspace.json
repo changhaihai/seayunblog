@@ -171,6 +171,8 @@
   },
   "active": "96b79d1156396696",
   "lastOpenFiles": [
+    "assets/images/cf-fastip-1.png",
+    "assets/images/cf-fastip.png",
     "posts/first-pc.md",
     "posts/warden-worker.md",
     "posts/admonition-test.md",
@@ -184,7 +186,6 @@
     "assets/images/屏幕截图2025-08-09213908.png",
     "assets/images/waf-8.png",
     "assets/images/waf-7.png",
-    "assets/images/waf-6.png",
     "posts/shorter-url.md",
     "posts/double-monitior.md",
     "posts/uptimeflare.md",
@@ -205,7 +206,6 @@
     "posts/ms-e3.md",
     "posts/onedrive-index.md",
     "posts/why-not-icp.md",
-    "posts/ipfs.md",
-    "posts/swup-js.md"
+    "posts/ipfs.md"
   ]
 }
