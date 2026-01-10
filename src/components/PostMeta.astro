@@ -1,7 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
 
-import { umamiConfig, profileConfig } from "../config";
+import { umamiConfig } from "../config";
 import { formatDateToYYYYMMDD } from "../utils/date-utils";
 import { url, getDir } from "../utils/url-utils";
 
@@ -12,7 +12,6 @@ interface Props {
 	hideUpdateDate?: boolean;
 	hidePublishedDate?: boolean;
 	slug?: string;
-	author?: string;
 }
 const {
 	published,
@@ -20,21 +19,12 @@ const {
 	hideUpdateDate = false,
 	hidePublishedDate = false,
 	slug,
-	author,
 } = Astro.props;
 const className = Astro.props.class;
 ---
 
 <div class:list={["flex flex-wrap text-neutral-500 dark:text-neutral-400 items-center gap-4 gap-x-4 gap-y-2", className]}>
-    <!-- author -->
-    {author && (
-        <div class="flex items-center">
-            <div class="meta-icon">
-                <Icon name="material-symbols:person-outline" class="text-xl"></Icon>
-            </div>
-            <span class="text-50 text-sm font-medium">{author}</span>
-        </div>
-    )}
+
     
     <!-- publish date -->
     {!hidePublishedDate && (
