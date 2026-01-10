@@ -2,7 +2,7 @@
 title: "🔥 发卡系统首选：EMSHOP 功能全解析，适配各类虚拟商品场景"
 published: 2026-01-10T18:00:00
 description: "功能全面、部署简单的开源发卡系统。EMSHOP 支持多模板切换、自动发货与全品类管理，为虚拟商品展示与交易提供一站式解决方案。"
-image: "../assets/images/emshop-banner.png"
+image: "/assets/images/emshop-banner.png" # Fuwari 封面图建议用绝对路径
 tags: [EMSHOP, 开源发卡系统, 虚拟商品系统, PHP工具, 技术工具]
 draft: false
 lang: "zh-CN"
@@ -11,10 +11,12 @@ cover: true
 ---
 
 ### EMSHOP
-**PHP 7.4 | MySQL ≥ 5.6 | GPLv3**
+**PHP 7.4 | MySQL ≥ 5.6 | GPLv3**  
 > 发卡系统 · 虚拟商品交易一站式解决方案  
 
-![EMSHOP LOGO](../assets/images/emlogo.png){: width="80" height="80" align="center"}
+<!-- Fuwari 支持的图片居中+尺寸控制（原生 Markdown 拓展） -->
+![EMSHOP LOGO](../assets/images/emlogo.png)
+<center><small>EMSHOP 官方标识</small></center>
 
 ---
 
@@ -22,24 +24,33 @@ cover: true
 
 ## 💴 站长收益
 ### 分站专属模板
-![EMSHOP 收益截图](../assets/images/emshop-收益截图.png){: width="700" height="auto" align="center"}
-> 适配场景：多站点运营、子品牌独立展示与管理
+![EMSHOP 收益截图](../assets/images/emshop-收益截图.png)
+<center><small>适配场景：多站点运营、子品牌独立展示与管理</small></center>
 
 ## 🎨 多风格模板展示
-EMSHOP 内置多套精致模板，适配不同商品展示场景，支持一键切换与自定义样式。
+EMSHOP 内置多套精致模板，适配不同商品展示场景，支持一键切换与自定义样式。  
 
-| 模板样式 | 展示效果 |
-|----------|----------|
-| 模板 1   | ![EMSHOP 模板 1](../assets/images/emshop-模板1.png){: width="350" height="auto"} |
-| 模板 2   | ![EMSHOP 模板 2](../assets/images/emshop-模板2.png){: width="350" height="auto"} |
-| 模板 3   | ![EMSHOP 模板 3](../assets/images/emshop-模板3.png){: width="700" height="auto" align="center"} |
+<!-- Fuwari 适配的多图横向排版（极简 HTML，不破坏主题样式） -->
+<div class="grid grid-cols-2 gap-4 mb-6">
+  <div>
+    ![EMSHOP 模板 1](../assets/images/emshop-模板1.png)
+    <center><small>模板 1：简约商务风</small></center>
+  </div>
+  <div>
+    ![EMSHOP 模板 2](../assets/images/emshop-模板2.png)
+    <center><small>模板 2：年轻化潮流风</small></center>
+  </div>
+</div>
+
+![EMSHOP 模板 3](../assets/images/emshop-模板3.png)
+<center><small>模板 3：全屏沉浸式展示</small></center>
 
 ## 🌐 分站模板（多站点支持）
-EMSHOP 提供分站模板，适合多品牌或多站点运营场景，可独立管理品牌展示与结算配置。
+EMSHOP 提供分站模板，适合多品牌或多站点运营场景，可独立管理品牌展示与结算配置。  
 
 ### 分站专属模板
-![EMSHOP 分站模板](../assets/images/emshop-分站.png){: width="700" height="auto" align="center"}
-> 适配场景：多站点运营、子品牌独立展示与管理
+![EMSHOP 分站模板](../assets/images/emshop-分站.png)
+<center><small>适配场景：多站点运营、子品牌独立展示与管理</small></center>
 
 ## 🚀 EMSHOP 核心功能亮点
 EMSHOP 以“实用、高效、灵活”为设计理念，覆盖虚拟商品管理与交易的全流程需求：
@@ -80,10 +91,3 @@ EMSHOP 以“实用、高效、灵活”为设计理念，覆盖虚拟商品管�
 - 内容创作者：发布数字课程、模板、素材等虚拟商品  
 - 企业用户：提供在线激活、会员开通等服务  
 - 个人用户：搭建个人虚拟商品店铺或资源分享平台
-
----
-
-<!-- 部署与调试说明 -->
-1. 确保图片文件存放路径：`../assets/images/`
-2. 图片尺寸可根据需求调整 `width/height` 参数，`auto` 表示保持宽高比
-3. 若解析器不支持 `{: width="xxx"}` 语法，可删除该部分，不影响核心展示
