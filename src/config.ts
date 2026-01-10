@@ -58,6 +58,7 @@ export const siteConfig: SiteConfig = {
 	],
 	officialSites: [
 		{ url: "https://acofork.com", alias: "EdgeOne CN" },
+		{ url: "https://2x.nz", alias: "Global" },
 		{ url: "https://seayun.cn", alias: "Global" },
 	],
 };
@@ -102,7 +103,7 @@ export const profileConfig: ProfileConfig = {
 		{
 			name: "GitHub",
 			icon: "fa6-brands:github",
-			url: "https://github.com/changhaihai/seayunblog",
+			url: "https://github.com/changhaihai",
 		},
 	],
 };
@@ -132,7 +133,7 @@ export const expressiveCodeConfig: ExpressiveCodeConfig = {
 
 export const gitHubEditConfig: GitHubEditConfig = {
 	enable: true,
-	baseUrl: "https://github.com/changhaihai/seayunblog/blob/main/src/content/posts",
+	baseUrl: "https://github.com/afoim/fuwari/blob/main/src/content/posts",
 };
 
 // todoConfig removed from here
