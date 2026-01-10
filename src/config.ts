@@ -140,10 +140,6 @@ export const expressiveCodeConfig: ExpressiveCodeConfig = {
 	theme: "github-dark",
 };
 
-export const expressiveCodeConfig: ExpressiveCodeConfig = {
-	theme: "github-dark",
-};
-
 export const gitHubEditConfig: GitHubEditConfig = {
 	enable: true,
 	baseUrl: "https://github.com/changhaihai/seayunblog/blob/main/src/content/posts",
