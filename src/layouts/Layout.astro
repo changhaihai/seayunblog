@@ -1,11 +1,11 @@
 ---
+import Analytics from "@vercel/analytics/astro";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 
-import ConfigCarrier from "@components/ConfigCarrier.astro";
-import PWAPrompt from "@components/PWAPrompt.astro";
 import { profileConfig, siteConfig } from "@/config";
+import ConfigCarrier from "@components/ConfigCarrier.astro";
 import {
 	AUTO_MODE,
 	BANNER_HEIGHT,
@@ -18,9 +18,8 @@ import {
 } from "../constants/constants";
 import { defaultFavicons } from "../constants/icon";
 import type { Favicon } from "../types/config";
-import { pathsEqual, url } from "../utils/url-utils";
+import { url, pathsEqual } from "../utils/url-utils";
 import "katex/dist/katex.css";
-import CustomCursor from "../components/CustomCursor.astro";
 
 interface Props {
 	title?: string;
@@ -53,7 +52,16 @@ let pageTitle: string;
 if (title) {
 	pageTitle = `${title} - ${siteConfig.title}`;
 } else {
-	pageTitle = `${siteConfig.title} - ${siteConfig.subtitle}`;
+	if (siteConfig.subtitle && siteConfig.subtitle.trim() !== "") {
+		pageTitle = `${siteConfig.title} - ${siteConfig.subtitle}`;
+	} else {
+		pageTitle = siteConfig.title;
+	}
+}
+
+// Use siteConfig.description as fallback for meta description when no description is provided
+if (!description) {
+	description = siteConfig.description || pageTitle;
 }
 
 const favicons: Favicon[] =
@@ -75,21 +83,24 @@ const bannerOffset =
 ---
 
 <!DOCTYPE html>
-<html lang={siteLang} class="bg-[var(--page-bg)] transition text-[14px] md:text-[16px]"
-	  data-overlayscrollbars-initialize
->
+ <html lang={siteLang} class="bg-[var(--page-bg)] transition text-[12px] md:text-[16px]"  
+	  data-overlayscrollbars-initialize>  <!-- 手机端适配 -->
+
 	<head>
 
 		<title>{pageTitle}</title>
 
 		<meta charset="UTF-8" />
-		<meta name="description" content={description || pageTitle}>
+		<meta name="description" content={description}>
 		<meta name="author" content={profileConfig.name}>
+		{siteConfig.keywords && (
+			<meta name="keywords" content={siteConfig.keywords.join(", ")}>
+		)}
 
 		<meta property="og:site_name" content={siteConfig.title}>
 		<meta property="og:url" content={Astro.url}>
 		<meta property="og:title" content={pageTitle}>
-		<meta property="og:description" content={description || pageTitle}>
+		<meta property="og:description" content={description}>
 		{setOGTypeArticle ? (
         <meta property="og:type" content="article" />
         ) : (
@@ -99,17 +110,19 @@ const bannerOffset =
 		<meta name="twitter:card" content="summary_large_image">
 		<meta property="twitter:url" content={Astro.url}>
 		<meta name="twitter:title" content={pageTitle}>
-		<meta name="twitter:description" content={description || pageTitle}>
+		<meta name="twitter:description" content={description}>
 
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<meta name="application-name" content="鈴奈咲桜のBlog" />
-		<meta name="theme-color" content="#ff6b9d" />
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="default" />
-		<meta name="apple-mobile-web-app-title" content="鈴奈咲桜のBlog" />
-		<link rel="manifest" href="/manifest.webmanifest" />
-		<link rel="apple-touch-icon" href="/pwa-512x512.png" />
+		<script src="/js/umami-share.js" defer></script>
+		{siteConfig.background.randomBackgroundScript && (
+			<script data-swup-ignore-script is:inline src={siteConfig.background.randomBackgroundScript}></script>
+		)}
+		
+		
+		
+		{/* <!-- Content Security Policy -->
+		<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app https://hpic.072103.xyz https://umami.2x.nz https://hm.baidu.com https://www.googletagmanager.com https://www.google-analytics.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://static.cloudflareinsights.com https://*.adtrafficquality.google; style-src 'self' 'unsafe-inline' https://giscus.app https://fonts.googleapis.com https://api.iconify.design; font-src 'self' https://fonts.gstatic.com https://api.iconify.design; img-src 'self' data: https: http:; connect-src 'self' https://umami.2x.nz https://hm.baidu.com https://www.google-analytics.com https://analytics.google.com https://api.iconify.design https://static.cloudflareinsights.com https://pic.2x.nz https://q2.qlogo.cn https://ep1.adtrafficquality.google https://googleads.g.doubleclick.net; frame-src 'self' https://giscus.app *.bilibili.com https://www.google.com https://googleads.g.doubleclick.net https://support.nodeget.com https://*.adtrafficquality.google; object-src 'none'; base-uri 'self'; form-action 'self';"> */}
 		{favicons.map(favicon => (
 			<link rel="icon"
 				  href={favicon.src.startsWith('/') ? url(favicon.src) : favicon.src}
@@ -119,22 +132,28 @@ const bannerOffset =
 		))}
 
 		<!-- Set the theme before the page is rendered to avoid a flash -->
-		<script is:inline define:vars={{DEFAULT_THEME, LIGHT_MODE, DARK_MODE, AUTO_MODE, BANNER_HEIGHT_EXTEND, PAGE_WIDTH, configHue}}>
-			// Load the theme from local storage
-			const theme = localStorage.getItem('theme') || DEFAULT_THEME;
-			switch (theme) {
-				case LIGHT_MODE:
-					document.documentElement.classList.remove('dark');
-					break
-				case DARK_MODE:
-					document.documentElement.classList.add('dark');
-					break
-				case AUTO_MODE:
-					if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-						document.documentElement.classList.add('dark');
-					} else {
+		<script is:inline define:vars={{DEFAULT_THEME, LIGHT_MODE, DARK_MODE, AUTO_MODE, BANNER_HEIGHT_EXTEND, PAGE_WIDTH, configHue, forceDarkMode: siteConfig.themeColor.forceDarkMode}}>
+			// Force dark mode if configured
+			if (forceDarkMode) {
+				document.documentElement.classList.add('dark');
+				localStorage.setItem('theme', DARK_MODE);
+			} else {
+				// Load the theme from local storage
+				const theme = localStorage.getItem('theme') || AUTO_MODE;
+				switch (theme) {
+					case LIGHT_MODE:
 						document.documentElement.classList.remove('dark');
-					}
+						break
+					case DARK_MODE:
+						document.documentElement.classList.add('dark');
+						break
+					case AUTO_MODE:
+						if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+							document.documentElement.classList.add('dark');
+						} else {
+							document.documentElement.classList.remove('dark');
+						}
+				}
 			}
 
 			// Load the hue from local storage
@@ -145,85 +164,197 @@ const bannerOffset =
 			let offset = Math.floor(window.innerHeight * (BANNER_HEIGHT_EXTEND / 100));
 			offset = offset - offset % 4;
 			document.documentElement.style.setProperty('--banner-height-extend', `${offset}px`);
+			
+			// // Background image loading detection
+			// const bgUrl = getComputedStyle(document.documentElement).getPropertyValue('--bg-url').trim();
+			// const bgEnable = getComputedStyle(document.documentElement).getPropertyValue('--bg-enable').trim();
+			
+			// if (bgUrl && bgUrl !== 'none' && bgEnable === '1') {
+			// 	const img = new Image();
+			// 	const urlMatch = bgUrl.match(/url\(["']?([^"')]+)["']?\)/);
+			// 	if (urlMatch) {
+			// 		img.onload = function() {
+			// 			// 背景图片完全加载后，显示背景并启用卡片透明效果
+			// 			document.body.classList.add('bg-loaded');
+			// 			document.documentElement.style.setProperty('--card-bg', 'var(--card-bg-transparent)');
+			// 			document.documentElement.style.setProperty('--float-panel-bg', 'var(--float-panel-bg-transparent)');
+			// 		};
+			// 		img.onerror = function() {
+			// 			// Keep cards opaque if background image fails to load
+			// 			console.warn('Background image failed to load, keeping cards opaque');
+			// 		};
+			// 		img.src = urlMatch[1];
+			// 	}
+			// }
 		</script>
 		<style define:vars={{
 			configHue,
 			'page-width': `${PAGE_WIDTH}rem`,
-		}}></style>  <!-- defines global css variables. This will be applied to <html> <body> and some other elements idk why -->
+			'bg-url': siteConfig.background.src ? `url(${siteConfig.background.src})` : 'none',
+			'bg-enable': siteConfig.background.enable ? '1' : '0',
+			'bg-position': siteConfig.background.position || 'center',
+			'bg-size': siteConfig.background.size || 'cover',
+			'bg-repeat': siteConfig.background.repeat || 'no-repeat',
+			'bg-attachment': siteConfig.background.attachment || 'fixed',
+			'bg-opacity': (siteConfig.background.opacity || 0.3).toString()
+		}}>
+			:root {
+				--bg-url: var(--bg-url);
+				--bg-enable: var(--bg-enable);
+				--bg-position: var(--bg-position);
+				--bg-size: var(--bg-size);
+				--bg-repeat: var(--bg-repeat);
+				--bg-attachment: var(--bg-attachment);
+				--bg-opacity: var(--bg-opacity);
+			}
+			
+			/* Background image configuration */
+			body {
+				--bg-url: var(--bg-url);
+				--bg-enable: var(--bg-enable);
+				--bg-position: var(--bg-position);
+				--bg-size: var(--bg-size);
+				--bg-repeat: var(--bg-repeat);
+				--bg-attachment: var(--bg-attachment);
+				--bg-opacity: var(--bg-opacity);
+			}
 
+			#bg-box {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-position: var(--bg-position);
+				background-size: var(--bg-size);
+				background-repeat: var(--bg-repeat);
+				background-attachment: var(--bg-attachment);
+				opacity: 0;
+				pointer-events: none;
+				z-index: -1;
+				transition: opacity 0.3s ease-in-out;
+			}
+			
+			#bg-box.loaded {
+				opacity: calc(var(--bg-opacity) * var(--bg-enable));
+			}
+		</style>
 
 		<slot name="head"></slot>
-		<script is:inline>
-		// 域名安全提醒
-		(function checkDomain() {
-			  var allowed = ["www.sakura.ink", "blog.sakura.ink", "sakura.ink", "localhost"];
-			  (function(h){
-				  // Allow Vercel & Netlify preview domains
-				  if (h.endsWith(".vercel.app") || h.endsWith(".netlify.app")) {
-					  allowed.push(h);
-				  }
-			  })(window.location.hostname);
-			if (!allowed.includes(window.location.hostname)) {
-				if (window.confirm("您正在访问的不是本站官方域名，是否跳转到安全域名 blog.sakura.ink？")) {
-					window.location.href = "https://blog.sakura.ink";
-				} else {
-					setTimeout(checkDomain, 100);
-				}
-			}
-		})();
-		// 移动端访问提醒（仅针对手机）
-		(function mobileNotice() {
-			try {
-				const ua = navigator.userAgent || "";
-				const isPhoneUA =
-					/(Android.+Mobile|iPhone|iPod|Windows Phone|Mobi)/i.test(ua) &&
-					!/iPad|Tablet/i.test(ua);
-				const smallTouch = (window.innerWidth < 768) && (navigator.maxTouchPoints || 0) > 0;
-
-				if ((isPhoneUA || smallTouch) && !sessionStorage.getItem("mobileNoticeShown")) {
-					alert("为获得最佳浏览体验，请使用平板或电脑浏览本站。点击确定后，您仍然可以继续浏览。");
-					sessionStorage.setItem("mobileNoticeShown", "1");
-				}
-			} catch (_) {}
-		})();
-		</script>
-
 
 
 		<link rel="alternate" type="application/rss+xml" title={profileConfig.name} href={`${Astro.site}rss.xml`}/>
+		<!-- Umami分析（自建） -->
+		<script defer src="https://umami.2x.nz/script.js" data-website-id="5d710dbd-3a2e-43e3-a553-97b415090c63" data-swup-ignore-script></script>
+		{/* - Umami分析（云-备用） 
+		<script defer src="https://cloud.umami.is/script.js" data-website-id="5d710dbd-3a2e-43e3-a553-97b415090c63" data-swup-ignore-script></script> */}
+		<!-- 超级吊的Umami eop -->
+		<script defer src="https://eo-umami.acofork.com/script.js" data-website-id="3f525363-5e81-4653-9491-1bd205c2a571"></script>
+		<!-- 百度统计 -->
+<script data-swup-ignore-script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?b219eaad631b87d273cfe72148b2138b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
 
+<!-- clarity 分析 -->
+<script type="text/javascript" data-swup-ignore-script>
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "t8f0gmcwtx");
+</script>
+
+		<!-- 谷歌分析 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9Z4LT4H8KH" data-swup-ignore-script></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9Z4LT4H8KH');
+</script>
+
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "15fe148e91b34f10a15652e1a74ab26c"}' data-swup-ignore-script></script><!-- End Cloudflare Web Analytics -->
 	</head>
 	<body class=" min-h-screen transition " class:list={[{"lg:is-home": isHomePage, "enable-banner": enableBanner}]}
 		  data-overlayscrollbars-initialize
 	>
+		<div id="bg-box"></div>
 		<ConfigCarrier></ConfigCarrier>
-		<!-- 自定义鼠标光标 -->
-		{siteConfig.customCursor?.enable && <CustomCursor />}
-		
-		<!-- 禁用自定义鼠标时，确保恢复默认鼠标样式 -->
-		{!siteConfig.customCursor?.enable && (
-			<script is:inline>
-				// 立即移除可能残留的自定义鼠标类
-				document.body.classList.remove('custom-cursor-enabled', 'custom-cursor-active');
-				
-				// 恢复默认鼠标样式
-				document.documentElement.style.cursor = '';
-				document.body.style.cursor = '';
-				
-				// 移除所有元素的内联 cursor: none 样式
-				document.querySelectorAll('*').forEach(el => {
-					if (el.style.cursor === 'none') {
-						el.style.cursor = '';
-					}
-				});
-			</script>
-		)}
-		
-		<PWAPrompt />
 		<slot />
 
 		<!-- increase the page height during page transition to prevent the scrolling animation from jumping -->
 		<div id="page-height-extend" class="hidden h-[300vh]"></div>
+
+		<!-- 域名检测脚本 -->
+		<script is:inline define:vars={{officialSites: siteConfig.officialSites || []}}>
+			// 域名检测功能
+			function checkDomain() {
+				try {
+					// 获取当前访问的完整URL
+					const currentUrl = window.location.href;
+					// 获取当前域名
+					const currentDomain = window.location.hostname;
+					
+					// 获取所有官方域名
+					const officialDomains = officialSites.map(site => {
+						try {
+                            const url = typeof site === 'string' ? site : site.url;
+							return new URL(url).hostname;
+						} catch (e) {
+							return null;
+						}
+					}).filter(domain => domain !== null);
+					
+					// 检查当前域名是否为官方域名或本地开发环境
+					const isOfficialDomain = officialDomains.some(officialDomain => 
+                        currentDomain === officialDomain || currentDomain.endsWith('.' + officialDomain)
+                    );
+					const isLocalDev = currentDomain === 'localhost' || currentDomain === '127.0.0.1';
+					
+					// 如果当前域名不是官方域名且不是本地开发环境
+					if (!isOfficialDomain && !isLocalDev) {
+						// 创建警告弹窗
+						const shouldRedirect = confirm(
+							`⚠️ 域名安全警告\n\n` +
+							`您当前访问的域名：${currentDomain}\n` +
+							`官方域名：${officialDomains.join(', ')}\n\n` +
+							`您可能正在访问非官方网站，存在安全风险！\n\n` +
+							`点击"确定"跳转到官方网站\n` +
+							`点击"取消"继续访问当前网站（不推荐）`
+						);
+						
+						// 如果用户选择跳转到官方网站
+						if (shouldRedirect) {
+							// 构建官方网站的对应页面URL（使用第一个官方网站）
+							const currentPath = window.location.pathname + window.location.search + window.location.hash;
+                            const firstSite = officialSites[0];
+                            const firstUrl = typeof firstSite === 'string' ? firstSite : firstSite.url;
+							const officialPageUrl = firstUrl + currentPath;
+							// 跳转到官方网站
+							window.location.href = officialPageUrl;
+						}
+					}
+				} catch (error) {
+					// 如果检测过程中出现错误，静默处理，不影响正常访问
+					console.warn('域名检测失败:', error);
+				}
+			}
+			
+			// 页面加载完成后执行域名检测
+			if (document.readyState === 'loading') {
+				document.addEventListener('DOMContentLoaded', checkDomain);
+			} else {
+				checkDomain();
+			}
+		</script>
+<Analytics />
 	</body>
 </html>
 
@@ -262,38 +393,6 @@ const bannerOffset =
 }
 </style>
 
-<!-- Global page background image with overlay + Gaussian blur -->
-<style is:global>
-	/* Theme-adaptive overlay color */
-	html { --bg-overlay: rgba(255, 255, 255, 0.65); }
-	html.dark { --bg-overlay: rgba(0, 0, 0, 0.5); }
-
-	/* Use a pseudo-element to render the background so we can blur it safely */
-	html, body { background: none; }
-	body { position: relative; z-index: 0; }
-	body::before {
-		content: "";
-		position: fixed;
-		inset: -24px; /* expand to avoid blur edge clipping */
-		z-index: -1;
-		background-image:
-			linear-gradient(var(--bg-overlay), var(--bg-overlay)),
-			url('/src/assets/images/img.png');
-		background-size: cover;
-		background-position: center;
-		background-repeat: no-repeat;
-		/* 高斯模糊 */
-		filter: blur(5px);
-		-webkit-filter: blur(5px);
-		transform: translateZ(0);
-		will-change: transform, filter;
-	}
-	/* On mobile移动端, avoid position: fixed issues by using absolute */
-	/* @media (max-width: 768px) {
-		body::before { position: absolute; }
-	} */
-</style>
-
 <script>
 import 'overlayscrollbars/overlayscrollbars.css';
 import {
@@ -302,7 +401,7 @@ import {
 	// SizeObserverPlugin,
 	// ClickScrollPlugin
 } from 'overlayscrollbars';
-import {getHue, getStoredTheme, setHue, setTheme} from "../utils/setting-utils";
+import {getHue, getStoredTheme, setHue, setTheme, getBgBlur, setBgBlur, getHideBg, setHideBg} from "../utils/setting-utils";
 import {pathsEqual, url} from "../utils/url-utils";
 import {
 	BANNER_HEIGHT,
@@ -386,6 +485,11 @@ function loadHue() {
 	setHue(getHue())
 }
 
+function loadBgBlur() {
+	setBgBlur(getBgBlur())
+    setHideBg(getHideBg())
+}
+
 function initCustomScrollbar() {
 	const bodyElement = document.querySelector('body');
 	if (!bodyElement) return;
@@ -405,61 +509,26 @@ function initCustomScrollbar() {
 			autoHideSuspend: false,
 		},
 	});
-
+	
 	const katexElements = document.querySelectorAll('.katex-display') as NodeListOf<HTMLElement>;
-
-	const katexObserverOptions = {
-		root: null,
-		rootMargin: '100px',
-		threshold: 0.1
-	};
-
-	const processKatexElement = (element: HTMLElement) => {
-		if (!element.parentNode) return;
-		if (element.hasAttribute('data-scrollbar-initialized')) return;
-
-		const container = document.createElement('div');
-		container.className = 'katex-display-container';
-		container.setAttribute('aria-label', 'scrollable container for formulas');
-
-		element.parentNode.insertBefore(container, element);
-		container.appendChild(element);
-
-		OverlayScrollbars(container, {
+	katexElements.forEach((ele) => {
+		OverlayScrollbars(ele, {
 			scrollbars: {
-				theme: 'scrollbar-base scrollbar-auto',
-				autoHide: 'leave',
-				autoHideDelay: 500,
-				autoHideSuspend: false
+				theme: 'scrollbar-base scrollbar-auto py-1',
 			}
 		});
-
-		element.setAttribute('data-scrollbar-initialized', 'true');
-	};
-
-	const katexObserver = new IntersectionObserver((entries, observer) => {
-		entries.forEach(entry => {
-			if (entry.isIntersecting) {
-			processKatexElement(entry.target as HTMLElement);
-			observer.unobserve(entry.target);
-			}
-		});
-	}, katexObserverOptions);
-
-	katexElements.forEach(element => {
-		katexObserver.observe(element);
 	});
 }
 
 function showBanner() {
 	if (!siteConfig.banner.enable) return;
-
+	
 	const banner = document.getElementById('banner');
 	if (!banner) {
 		console.error('Banner element not found');
 		return;
 	}
-
+	
 	banner.classList.remove('opacity-0', 'scale-105');
 }
 
@@ -467,6 +536,7 @@ function init() {
 	// disableAnimation()()		// TODO
 	loadTheme();
 	loadHue();
+    loadBgBlur();
 	initCustomScrollbar();
 	showBanner();
 }
@@ -555,6 +625,7 @@ if (window?.swup?.hooks) {
 }
 
 let backToTopBtn = document.getElementById('back-to-top-btn');
+let goToCommentsBtn = document.getElementById('go-to-comments-btn');
 let toc = document.getElementById('toc-wrapper');
 let navbar = document.getElementById('navbar-wrapper')
 function scrollFunction() {
@@ -567,6 +638,16 @@ function scrollFunction() {
 			backToTopBtn.classList.add('hide')
 		}
 	}
+
+    if (goToCommentsBtn) {
+        // Only show if comments exist and scrolled down
+        const commentsExist = !!document.getElementById('giscus-container');
+        if (commentsExist && (document.body.scrollTop > bannerHeight || document.documentElement.scrollTop > bannerHeight)) {
+            goToCommentsBtn.classList.remove('hide')
+        } else {
+            goToCommentsBtn.classList.add('hide')
+        }
+    }
 
 	if (bannerEnabled && toc) {
 		if (document.body.scrollTop > bannerHeight || document.documentElement.scrollTop > bannerHeight) {
@@ -605,94 +686,65 @@ window.onresize = () => {
 </script>
 
 <script>
-import { Fancybox } from "@fancyapps/ui";
-import "@fancyapps/ui/dist/fancybox/fancybox.css";
-
-function initFancybox() {
-	// Initialize Fancybox with delegate selector
-	Fancybox.bind("[data-fancybox]", {
-		Toolbar: {
-			display: {
-				left: ["infobar"],
-				middle: [
-					"zoomIn",
-					"zoomOut",
-					"toggle1to1",
-					"rotateCCW",
-					"rotateCW",
-					"flipX",
-					"flipY",
-				],
-				right: ["slideshow", "thumbs", "close"],
-			},
-		},
-		Image: {
-			zoom: true,
-			click: "close",
-			wheel: "zoom",
-		},
-	});
-}
-
-// Also initialize Fancybox for images in markdown content and post cover
-function initAutoFancybox() {
-	// Add data-fancybox attribute to images in markdown content and post cover
-	const images = document.querySelectorAll(".custom-md img, #post-cover img");
-	images.forEach((img, index) => {
-		// Skip images that are already inside a link or have data-fancybox attribute
-		if (!img.closest('a') && !img.hasAttribute('data-fancybox')) {
-			img.setAttribute('data-fancybox', 'gallery');
-			img.setAttribute('data-caption', img.alt || '');
-		}
-	});
-	
-	// Bind Fancybox to the images
-	Fancybox.bind(".custom-md img, #post-cover img", {
-		Toolbar: {
-			display: {
-				left: ["infobar"],
-				middle: [
-					"zoomIn",
-					"zoomOut",
-					"toggle1to1",
-					"rotateCCW",
-					"rotateCW",
-					"flipX",
-					"flipY",
-				],
-				right: ["slideshow", "thumbs", "close"],
-			},
-		},
-		Image: {
-			zoom: true,
-			click: "close",
-			wheel: "zoom",
-		},
-	});
-}
+import { Fancybox } from "@fancyapps/ui"
+import "@fancyapps/ui/dist/fancybox/fancybox.css"
 
 const setup = () => {
-	initFancybox();
-	initAutoFancybox();
-	
+	Fancybox.bind(".custom-md img, #post-cover img", {
+		wheel: 'zoom',
+		clickContent: 'close',
+		dblclickContent: 'zoom',
+		click: 'close',
+		dblclick: 'zoom',
+		Panels: {
+			display: ['counter', 'zoom']
+		},
+		Images: {
+			panning: true,
+			zoom: true,
+			protect: false
+		}
+	})
+
 	window.swup.hooks.on("page:view", () => {
-		initFancybox();
-		initAutoFancybox();
-	});
+		Fancybox.bind(".custom-md img, #post-cover img", {
+			wheel: 'zoom',
+			clickContent: 'close',
+			dblclickContent: 'zoom',
+			click: 'close',
+			dblclick: 'zoom',
+			Panels: {
+				display: ['counter', 'zoom']
+			},
+			Images: {
+				panning: true,
+				zoom: true,
+				protect: false
+			}
+		})
+	})
 
 	window.swup.hooks.on(
 		"content:replace",
 		() => {
-			// Cleanup Fancybox instances
-			Fancybox.close();
+			Fancybox.unbind(".custom-md img, #post-cover img")
 		},
 		{ before: true },
-	);
-};
+	)
+}
 
 if (window.swup) {
-	setup();
+	setup()
 } else {
-	document.addEventListener("swup:enable", setup);
+	document.addEventListener("swup:enable", setup)
 }
 </script>
+
+<svg style="position: absolute; width: 0; height: 0; overflow: hidden;" aria-hidden="true">
+  <defs>
+    <filter id="liquid-glass">
+      <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="20" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </defs>
+</svg>
