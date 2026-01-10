@@ -17,10 +17,10 @@ const getCDNUrl = (cnUrl: string, dfUrl: string) => {
 }
 
 export const siteConfig: SiteConfig = {
-	title: "AcoFork Blog",
+	title: "海云 Blog",
 	subtitle: "技术分享与实践",
 	description:
-		"分享网络技术、服务器部署、内网穿透、静态网站搭建、CDN优化、容器化部署等技术教程与实践经验的个人技术博客，专注于云原生、无服务器架构和前后端开发，作者为afoim/二叉树树",
+		"分享网络技术、服务器部署.",
 
 	keywords: [],
 	lang: "zh_CN", // 'en', 'zh_CN', 'zh_TW', 'ja', 'ko', 'es', 'th'
@@ -61,7 +61,7 @@ export const siteConfig: SiteConfig = {
 	favicon: [
 		// Leave this array empty to use the default favicon
 		{
-			src: "https://q2.qlogo.cn/headimg_dl?dst_uin=2726730791&spec=0", // Path of the favicon, relative to the /public directory
+			src: "https://em.zhixora.com/content/uploadfile/202601/84271767909250.jpg", // Path of the favicon, relative to the /public directory
 			//   theme: 'light',              // (Optional) Either 'light' or 'dark', set only if you have different favicons for light and dark mode
 			//   sizes: '32x32',              // (Optional) Size of the favicon, set only if you have favicons of different sizes
 		},
@@ -69,6 +69,7 @@ export const siteConfig: SiteConfig = {
 	officialSites: [
 		{ url: "https://acofork.com", alias: "CN" },
 		{ url: "https://2x.nz", alias: "Global" },
+		{ url: "https://seayun.cn", alias: "Global" },
 	],
 };
 
@@ -100,19 +101,19 @@ export const navBarConfig: NavBarConfig = {
 };
 
 export const profileConfig: ProfileConfig = {
-	avatar: "https://q2.qlogo.cn/headimg_dl?dst_uin=2726730791&spec=0", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
-	name: "二叉树树",
+	avatar: "hhttps://em.zhixora.com/content/uploadfile/202601/84271767909250.jpg", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+	name: "Detector",
 	bio: "Protect What You Love.",
 	links: [
-		{
-			name: "Bilibli",
-			icon: "fa6-brands:bilibili",
-			url: "https://space.bilibili.com/325903362",
-		},
 		{
 			name: "GitHub",
 			icon: "fa6-brands:github",
 			url: "https://github.com/afoim",
+		},
+		{
+			name: "Email",
+			icon: "fa6-brands:envelope",
+			url: "https://mail.yeah.net/",
 		},
 	],
 };
@@ -145,7 +146,7 @@ export const expressiveCodeConfig: ExpressiveCodeConfig = {
 
 export const gitHubEditConfig: GitHubEditConfig = {
 	enable: true,
-	baseUrl: "https://github.com/afoim/fuwari/blob/main/src/content/posts",
+	baseUrl: "https://github.com/changhaihai/seayunblog/blob/main/src/content/posts",
 };
 
 // todoConfig removed from here
