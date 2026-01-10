@@ -26,11 +26,11 @@ cover: true
 EMSHOP 内置多套精致模板，适配不同商品展示场景，支持一键切换与自定义样式。  
 
 ![EMSHOP 模板 1](../assets/images/emshop-模板1.png)
-<center><small>模板 3：全屏沉浸式展示</small></center>>
+<center><small>模板 1</small></center>
 ![EMSHOP 模板 2](../assets/images/emshop-模板2.png)
-<center><small>模板 3：全屏沉浸式展示</small></center>
+<center><small>模板 2</small></center>
 ![EMSHOP 模板 3](../assets/images/emshop-模板3.png)
-<center><small>模板 3：全屏沉浸式展示</small></center>
+<center><small>模板 3</small></center>
 
 ## 🌐 分站模板（多站点支持）
 EMSHOP 提供分站模板，适合多品牌或多站点运营场景，可独立管理品牌展示与结算配置。  
