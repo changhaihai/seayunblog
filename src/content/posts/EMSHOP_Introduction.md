@@ -27,8 +27,10 @@ EMSHOP 内置多套精致模板，适配不同商品展示场景，支持一键�
 
 ![EMSHOP 模板 1](../assets/images/emshop-模板1.png)
 <center><small>模板 1</small></center>
+
 ![EMSHOP 模板 2](../assets/images/emshop-模板2.png)
 <center><small>模板 2</small></center>
+
 ![EMSHOP 模板 3](../assets/images/emshop-模板3.png)
 <center><small>模板 3</small></center>
 
