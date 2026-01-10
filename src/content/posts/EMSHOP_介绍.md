@@ -1,6 +1,6 @@
 ---
 title: "🔥 发卡系统首选：EMSHOP 功能全解析，适配各类虚拟商品场景"
-published: 2025-01-10T18:00:00
+published: 2026-01-10T18:00:00
 description: "功能全面、部署简单的开源发卡系统。EMSHOP 支持多模板切换、自动发货与全品类管理，为虚拟商品展示与交易提供一站式解决方案。"
 image: "/assets/images/emshop-banner.png"
 tags: [EMSHOP, 开源发卡系统, 虚拟商品系统, PHP工具, 技术工具]
