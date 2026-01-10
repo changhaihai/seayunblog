@@ -2,7 +2,7 @@
 title: "🔥 发卡系统首选：EMSHOP 功能全解析，适配各类虚拟商品场景"
 published: 2026-01-10T18:00:00
 description: "功能全面、部署简单的开源发卡系统。EMSHOP 支持多模板切换、自动发货与全品类管理，为虚拟商品展示与交易提供一站式解决方案。"
-image: "/assets/images/emshop-banner.png" # Fuwari 封面图建议用绝对路径
+image: ../assets/images/2025-05-02-21-04-48-image.png
 tags: [EMSHOP, 开源发卡系统, 虚拟商品系统, PHP工具, 技术工具]
 draft: false
 lang: "zh-CN"
@@ -30,18 +30,10 @@ cover: true
 ## 🎨 多风格模板展示
 EMSHOP 内置多套精致模板，适配不同商品展示场景，支持一键切换与自定义样式。  
 
-<!-- Fuwari 适配的多图横向排版（极简 HTML，不破坏主题样式） -->
-<div class="grid grid-cols-2 gap-4 mb-6">
-  <div>
-    ![EMSHOP 模板 1](../assets/images/emshop-模板1.png)
-    <center><small>模板 1：简约商务风</small></center>
-  </div>
-  <div>
-    ![EMSHOP 模板 2](../assets/images/emshop-模板2.png)
-    <center><small>模板 2：年轻化潮流风</small></center>
-  </div>
-</div>
-
+![EMSHOP 模板 1](../assets/images/emshop-模板1.png)
+<center><small>模板 3：全屏沉浸式展示</small></center>>
+![EMSHOP 模板 2](../assets/images/emshop-模板2.png)
+<center><small>模板 3：全屏沉浸式展示</small></center>
 ![EMSHOP 模板 3](../assets/images/emshop-模板3.png)
 <center><small>模板 3：全屏沉浸式展示</small></center>
 
