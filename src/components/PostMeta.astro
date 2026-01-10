@@ -1,7 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
 
-import { umamiConfig } from "../config";
+import { umamiConfig, profileConfig } from "../config";
 import { formatDateToYYYYMMDD } from "../utils/date-utils";
 import { url, getDir } from "../utils/url-utils";
 
@@ -12,6 +12,7 @@ interface Props {
 	hideUpdateDate?: boolean;
 	hidePublishedDate?: boolean;
 	slug?: string;
+	author?: string;
 }
 const {
 	published,
@@ -19,11 +20,22 @@ const {
 	hideUpdateDate = false,
 	hidePublishedDate = false,
 	slug,
+	author,
 } = Astro.props;
 const className = Astro.props.class;
 ---
 
 <div class:list={["flex flex-wrap text-neutral-500 dark:text-neutral-400 items-center gap-4 gap-x-4 gap-y-2", className]}>
+    <!-- author -->
+    {author && (
+        <div class="flex items-center">
+            <div class="meta-icon">
+                <Icon name="material-symbols:person-outline" class="text-xl"></Icon>
+            </div>
+            <span class="text-50 text-sm font-medium">{author}</span>
+        </div>
+    )}
+    
     <!-- publish date -->
     {!hidePublishedDate && (
         <div class="flex items-center">
@@ -86,7 +98,13 @@ const className = Astro.props.class;
     async function fetchPageViews() {
         if (!umamiConfig.enable) return;
         try {
-            const statsData = await fetchUmamiStats(umamiConfig.baseUrl, umamiConfig.shareId, {
+            // 确保 fetchUmamiStats 函数存在
+            if (typeof window.fetchUmamiStats !== 'function') {
+                console.error('fetchUmamiStats function not found');
+                return;
+            }
+            
+            const statsData = await window.fetchUmamiStats(umamiConfig.baseUrl, umamiConfig.shareId, {
                 timezone: umamiConfig.timezone,
                 path: `eq./posts/${slug}/`
             });
