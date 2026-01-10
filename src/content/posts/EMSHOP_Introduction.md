@@ -11,33 +11,35 @@ cover: true
 ---
 
 ### EMSHOP
-**PHP 7.4 | MySQL ≥ 5.6 | GPLv3**  
-发卡系统 · 虚拟商品交易一站式解决方案  
+**PHP 7.4 | MySQL ≥ 5.6 | GPLv3**
+> 发卡系统 · 虚拟商品交易一站式解决方案  
 
-![EMSHOP LOGO](../assets/images/emlogo.png)
+![EMSHOP LOGO](../assets/images/emlogo.png){: width="80" height="80" align="center"}
+
+---
 
 在虚拟商品（激活码、CDK、会员资格、数字资源等）的展示与交易场景中，一款稳定、高效且易扩展的发卡系统能显著提升用户和运营体验。EMSHOP 作为开源社区中的优质选项，凭借功能全面、部署简单与灵活定制，广受好评。下面我们来逐项解析它的核心亮点与适用场景。
 
 ## 💴 站长收益
 ### 分站专属模板
-![EMSHOP 收益截图](../assets/images/emshop-收益截图.png)
-适配场景：多站点运营、子品牌独立展示与管理
+![EMSHOP 收益截图](../assets/images/emshop-收益截图.png){: width="700" height="auto" align="center"}
+> 适配场景：多站点运营、子品牌独立展示与管理
 
 ## 🎨 多风格模板展示
 EMSHOP 内置多套精致模板，适配不同商品展示场景，支持一键切换与自定义样式。
 
-![EMSHOP 模板 1](../assets/images/emshop-模板1.png)
-
-![EMSHOP 模板 2](../assets/images/emshop-模板2.png)
-
-![EMSHOP 模板 3](../assets/images/emshop-模板3.png)
+| 模板样式 | 展示效果 |
+|----------|----------|
+| 模板 1   | ![EMSHOP 模板 1](../assets/images/emshop-模板1.png){: width="350" height="auto"} |
+| 模板 2   | ![EMSHOP 模板 2](../assets/images/emshop-模板2.png){: width="350" height="auto"} |
+| 模板 3   | ![EMSHOP 模板 3](../assets/images/emshop-模板3.png){: width="700" height="auto" align="center"} |
 
 ## 🌐 分站模板（多站点支持）
 EMSHOP 提供分站模板，适合多品牌或多站点运营场景，可独立管理品牌展示与结算配置。
 
 ### 分站专属模板
-![EMSHOP 分站模板](../assets/images/emshop-分站.png)
-适配场景：多站点运营、子品牌独立展示与管理
+![EMSHOP 分站模板](../assets/images/emshop-分站.png){: width="700" height="auto" align="center"}
+> 适配场景：多站点运营、子品牌独立展示与管理
 
 ## 🚀 EMSHOP 核心功能亮点
 EMSHOP 以“实用、高效、灵活”为设计理念，覆盖虚拟商品管理与交易的全流程需求：
@@ -64,11 +66,13 @@ EMSHOP 以“实用、高效、灵活”为设计理念，覆盖虚拟商品管�
    - 自带博客功能，可发布教程、使用指南与行业资讯，提升用户留存并有利于 SEO 优化。
 
 ## ⚙️ 技术架构与兼容性
-- 开发语言：原生 PHP 7.4  
-- 数据库：MySQL 5.6 及以上  
-- 兼容性：适配 Apache、Nginx，支持 Windows / Linux 部署  
-- 扩展性：插件化设计，支持二次开发与自定义接口  
-- 授权协议：GPLv3（开源免费，可修改、分发）
+| 维度       | 详情                          |
+|------------|-------------------------------|
+| 开发语言   | 原生 PHP 7.4                  |
+| 数据库     | MySQL 5.6 及以上              |
+| 兼容性     | 适配 Apache、Nginx，支持 Windows / Linux 部署 |
+| 扩展性     | 插件化设计，支持二次开发与自定义接口 |
+| 授权协议   | GPLv3（开源免费，可修改、分发）|
 
 ## 📌 适用场景
 - 软件开发者：发布与售卖软件激活码、授权证书  
@@ -79,15 +83,7 @@ EMSHOP 以“实用、高效、灵活”为设计理念，覆盖虚拟商品管�
 
 ---
 
-<!-- 部署与调试说明（请阅读并执行）：
-1) 确保下列图片文件已部署到你站点的 /assets/images/ 目录：
-   - emshop-banner.png
-   - emlogo.png
-   - emshop-收益截图.png
-   - emshop-模板1.png / emshop-模板2.png / emshop-模板3.png
-   - emshop-分站.png
-2) 在浏览器地址栏测试：访问 https://yourdomain.com/assets/images/emlogo.png（替换为你真实域名），应返回 200 并显示图片。
-3) 如果你的网站部署在子路径（例如 GitHub Pages 的 https://username.github.io/repo/），请把图片路径改为完整 URL：
-   例如： https://username.github.io/repo/assets/images/emlogo.png
-4) 如果仍显示破图，按 F12 → Network 查看该图片请求的 URL 与返回码，确认路径是否正确。
--->
+<!-- 部署与调试说明 -->
+1. 确保图片文件存放路径：`../assets/images/`
+2. 图片尺寸可根据需求调整 `width/height` 参数，`auto` 表示保持宽高比
+3. 若解析器不支持 `{: width="xxx"}` 语法，可删除该部分，不影响核心展示
