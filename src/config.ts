@@ -112,7 +112,7 @@ export const profileConfig: ProfileConfig = {
 		},
 		{
 			name: "Email",
-			icon: "fa6-brands:envelope",
+			icon: "ai:fa6-solid:envelope",
 			url: "https://mail.yeah.net/",
 		},
 	],
