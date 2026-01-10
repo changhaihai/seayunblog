@@ -108,8 +108,7 @@ export const profileConfig: ProfileConfig = {
 		{
 			name: "Email",
 			icon: "fa6-brands:envelope",
-			url: "mailto:seayun@yeah.net", // 唤起发邮件功能
-			tips: "给seayun@yeah.net发邮件" // 可选：添加提示文字
+			url: "mailto:seayun@yeah.net",
 		},
 	],
 };
