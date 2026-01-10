@@ -122,9 +122,16 @@ export const imageFallbackConfig: ImageFallbackConfig = {
 
 export const umamiConfig: UmamiConfig = {
 	enable: true,
-	baseUrl: "https://umami.2x.nz",
+	baseUrl: getCDNUrl(
+		"https://esa-umami.acofork.com", // CN CDN
+		"https://umami.2x.nz"           // Default/Global CDN
+	),
 	shareId: "CdkXbGgZr6ECKOyK",
 	timezone: "Asia/Shanghai",
+};
+
+export const expressiveCodeConfig: ExpressiveCodeConfig = {
+	theme: "github-dark",
 };
 
 export const expressiveCodeConfig: ExpressiveCodeConfig = {
