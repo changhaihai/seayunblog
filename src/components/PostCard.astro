@@ -33,14 +33,12 @@ const coverWidth = "28%";
 
 const { remarkPluginFrontmatter } = await entry.render();
 ---
-<div class:list={["card-base card-hover flex flex-col w-full relative", className]} style={style}>
-    <div class:list={["pl-9 pr-2 pt-6 pb-6 relative", {"w-[calc(100%_-_52px_-_12px)]": !hasCover, "w-[calc(100%_-_var(--coverWidth)_-_12px)]": hasCover}]}>
+<div class:list={["card-base card-hover flex flex-col w-full relative overflow-hidden", className]} style={style}>
+    <div class:list={["pl-6 pr-6 pt-5 pb-5 relative", {"w-[calc(100%_-_52px_-_12px)]": !hasCover, "w-[calc(100%_-_var(--coverWidth)_-_12px)]": hasCover}]}>
         <a href={url}
-           class="transition group w-full block font-bold mb-2 md:mb-3 text-xl md:text-3xl text-90 relative
+           class="transition group w-full block font-bold mb-2 md:mb-3 text-lg md:text-xl text-90 relative
         hover:text-[var(--primary)] dark:hover:text-[var(--primary)]
         active:text-[var(--title-active)] dark:active:text-[var(--title-active)]
-        before:w-1 before:h-5 before:rounded-md before:bg-[var(--primary)]
-        before:absolute before:top-1 md:before:top-2 before:-left-[1.125rem] before:block
         ">
 
             {title}
@@ -52,15 +50,12 @@ const { remarkPluginFrontmatter } = await entry.render();
         </div>
 
         <!-- metadata -->
-        <PostMetadata published={published} updated={updated} hideUpdateDate={true} hidePublishedDate={true} slug={entry.slug} class="mb-2 md:mb-4"></PostMetadata>
-
-        <!-- word count, read time and page views -->
-        <div class="text-sm text-black/30 dark:text-white/30 flex gap-4 transition">
-            <div>{formatDateToYYYYMMDD(published)}</div>
-            <div>|</div>
-            <div>{remarkPluginFrontmatter.words} 字</div>
-            <div>|</div>
-            <div>{remarkPluginFrontmatter.minutes} 分钟</div>
+        <div class="flex items-center text-xs text-black/40 dark:text-white/40 mb-3 gap-3">
+            <span>{formatDateToYYYYMMDD(published)}</span>
+            <span>•</span>
+            <span>{remarkPluginFrontmatter.words} 字</span>
+            <span>•</span>
+            <span>{remarkPluginFrontmatter.minutes} 分钟</span>
         </div>
 
     </div>
@@ -68,27 +63,20 @@ const { remarkPluginFrontmatter } = await entry.render();
     {hasCover && <a href={url} aria-label={title}
                     class:list={["group",
                         "max-h-none mx-0 mt-0",
-                        "w-[var(--coverWidth)] absolute top-3 bottom-3 right-3 rounded-xl overflow-hidden active:scale-95"
+                        "w-[var(--coverWidth)] absolute top-4 bottom-4 right-4 rounded-lg overflow-hidden active:scale-95 shadow-sm"
                     ]} >
-        <div class="absolute pointer-events-none z-10 w-full h-full group-hover:bg-black/30 group-active:bg-black/50 transition"></div>
-        <!-- 封面图上的箭头 -->
-        <div class="absolute pointer-events-none z-20 w-full h-full flex items-center justify-center ">
-            <Icon name="material-symbols:chevron-right-rounded"
-                  class="transition opacity-0 group-hover:opacity-100 scale-50 group-hover:scale-100 text-white text-5xl">
-            </Icon>
-        </div>
         <ImageWrapper src={image} basePath={path.join("content/posts/", getDir(entry.id))} alt="Cover Image of the Post"
-                  class="w-full h-full">
+                  class="w-full h-full object-cover">
         </ImageWrapper>
     </a>}
 
     {!hasCover &&
-        <a href={url} aria-label={title} class="!flex btn-regular w-[3.25rem]
-         absolute right-3 top-3 bottom-3 rounded-xl bg-[var(--enter-btn-bg)]
+        <a href={url} aria-label={title} class="!flex btn-regular w-10 h-10
+         absolute right-4 top-1/2 -translate-y-1/2 rounded-lg bg-[var(--enter-btn-bg)]
          hover:bg-[var(--enter-btn-bg-hover)] active:bg-[var(--enter-btn-bg-active)] active:scale-95
         ">
             <Icon name="material-symbols:chevron-right-rounded"
-                  class="transition text-[var(--primary)] text-4xl mx-auto">
+                  class="transition text-[var(--primary)] text-xl mx-auto">
             </Icon>
         </a>
     }
