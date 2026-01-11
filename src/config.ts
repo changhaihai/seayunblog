@@ -30,7 +30,6 @@ export const siteConfig: SiteConfig = {
 		credit: {
 			enable: false, // Display the credit text of the banner image
 			text: "Pixiv @chokei", // Credit text to be displayed
-
 			url: "https://www.pixiv.net/artworks/122782209", // (Optional) URL link to the original artwork or artist's page
 		},
 	},
@@ -75,7 +74,7 @@ export const navBarConfig: NavBarConfig = {
 			url: "/friends/", // Internal links should not include the base path, as it is automatically added
 			external: false, // Show an external link icon and will open in a new tab
 		},
-		{
+		/*{
 			name: "赞助",
 			url: "/sponsors/", // Internal links should not include the base path, as it is automatically added
 			external: false, // Show an external link icon and will open in a new tab
@@ -89,7 +88,7 @@ export const navBarConfig: NavBarConfig = {
 			name: "监控",
 			url: "https://vps.2x.nz", // Internal links should not include the base path, as it is automatically added
 			external: true, // Show an external link icon and will open in a new tab
-		},
+		},*/
 	],
 };
 
@@ -99,14 +98,14 @@ export const profileConfig: ProfileConfig = {
 	bio: "Protect What You Love.",
 	links: [
 		{
-			name: "Bilibli",
-			icon: "fa6-brands:bilibili",
-			url: "https://space.bilibili.com/325903362",
-		},
-		{
 			name: "GitHub",
 			icon: "fa6-brands:github",
-			url: "https://github.com/afoim",
+			url: "https://github.com/changhai",
+		},
+		{
+			name: "Email",
+			icon: "fa6-solid:envelope",
+			url: "https://mail.yeah.net/",
 		},
 	],
 };
