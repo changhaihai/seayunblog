@@ -2,7 +2,7 @@
 title: "EMSHOP发卡网对接码/易支付完整教程"
 published: 2026-01-11T10:00:00
 description: "零基础完成EMSHOP发卡网与码支付/易支付的对接，包含参数配置、回调调试、常见问题解决，适配新手操作"
-image: "../assets/images/Zhipay-dock.png" # 替换为你博客的支付相关配图路径
+image: "../assets/images/Zhipay-dock.jpg" # 替换为你博客的支付相关配图路径
 tags: [EMSHOP, 码支付, 易支付, 发卡网, 对接教程]
 draft: false
 lang: "zh-CN"
