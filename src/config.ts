@@ -20,7 +20,7 @@ export const siteConfig: SiteConfig = {
 	lang: "zh_CN", // 'en', 'zh_CN', 'zh_TW', 'ja', 'ko', 'es', 'th'
 	themeColor: {
 		hue: 135, // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
-		fixed: false, // Hide the theme color picker for visitors
+		fixed: true, // Hide the theme color picker for visitors
 		forceDarkMode: false, // Force dark mode and hide theme switcher
 	},
 	banner: {
@@ -100,7 +100,7 @@ export const profileConfig: ProfileConfig = {
 		{
 			name: "GitHub",
 			icon: "fa6-brands:github",
-			url: "https://github.com/changhai",
+			url: "https://github.com/changhaihai",
 		},
 		{
 			name: "Email",
@@ -135,7 +135,7 @@ export const expressiveCodeConfig: ExpressiveCodeConfig = {
 
 export const gitHubEditConfig: GitHubEditConfig = {
 	enable: true,
-	baseUrl: "https://github.com/afoim/fuwari/blob/main/src/content/posts",
+	baseUrl: "https://github.com/changhaihai/seayunblog/blob/main/src/content/posts",
 };
 
 // todoConfig removed from here
