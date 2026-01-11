@@ -11,22 +11,21 @@ import type {
 import { LinkPreset } from "./types/config";
 
 export const siteConfig: SiteConfig = {
-	title: "AcoFork Blog",
+	title: "海云 Blog",
 	subtitle: "技术分享与实践",
 	description:
-		"分享网络技术、服务器部署、内网穿透、静态网站搭建、CDN优化、容器化部署等技术教程与实践经验的个人技术博客，专注于云原生、无服务器架构和前后端开发，作者为afoim/二叉树树",
+		"分享网络技术、服务器部署、内网穿透、静态网站搭建",
 
 	keywords: [],
 	lang: "zh_CN", // 'en', 'zh_CN', 'zh_TW', 'ja', 'ko', 'es', 'th'
 	themeColor: {
-		hue: 361, // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
+		hue: 135, // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
 		fixed: false, // Hide the theme color picker for visitors
 		forceDarkMode: false, // Force dark mode and hide theme switcher
 	},
 	banner: {
-		enable: false,
+		enable: true,
 		src: "/xinghui.avif", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
-
 		position: "center", // Equivalent to object-position, only supports 'top', 'center', 'bottom'. 'center' by default
 		credit: {
 			enable: true, // Display the credit text of the banner image
@@ -51,7 +50,7 @@ export const siteConfig: SiteConfig = {
 	favicon: [
 		// Leave this array empty to use the default favicon
 		{
-			src: "https://q2.qlogo.cn/headimg_dl?dst_uin=2726730791&spec=0", // Path of the favicon, relative to the /public directory
+			src: "https://em.zhixora.com/content/uploadfile/202601/84271767909250.jpg", // Path of the favicon, relative to the /public directory
 			//   theme: 'light',              // (Optional) Either 'light' or 'dark', set only if you have different favicons for light and dark mode
 			//   sizes: '32x32',              // (Optional) Size of the favicon, set only if you have favicons of different sizes
 		},
@@ -59,6 +58,7 @@ export const siteConfig: SiteConfig = {
 	officialSites: [
 		{ url: "https://blog.acofork.com", alias: "CN" },
 		{ url: "https://2x.nz", alias: "Global" },
+		{ url: "https://seayun.cn", alias: "Global" },
 	],
 	server: [
 		{ url: "", text: "博客本体节点" },
@@ -94,8 +94,8 @@ export const navBarConfig: NavBarConfig = {
 };
 
 export const profileConfig: ProfileConfig = {
-	avatar: "https://q2.qlogo.cn/headimg_dl?dst_uin=2726730791&spec=0", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
-	name: "二叉树树",
+	avatar: "https://em.zhixora.com/content/uploadfile/202601/84271767909250.jpg", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+	name: "Detector",
 	bio: "Protect What You Love.",
 	links: [
 		{
