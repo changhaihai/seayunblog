@@ -25,7 +25,7 @@ export const siteConfig: SiteConfig = {
 	},
 	banner: {
 		enable: true,
-		src: "https://p3.ssl.qhimgs1.com/sdr/400__/t04802a2291ac92ad0d.jpg", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+		src: "https://sns-webpic-qc.xhscdn.com/202604102134/f797691e152295a495c2f54ef40f81bf/1040g2sg31dveio550kd05n188hqh95185922t7g!nd_dft_wgth_jpg_3", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
 		position: "center", // Equivalent to object-position, only supports 'top', 'center', 'bottom'. 'center' by default
 		credit: {
 			enable: false, // Display the credit text of the banner image
