@@ -10,6 +10,8 @@ import type {
 } from "./types/config";
 import { LinkPreset } from "./types/config";
 
+const customDomain = "2x.nz";
+
 export const siteConfig: SiteConfig = {
 	title: "海云 Blog",
 	subtitle: "技术分享与实践",
@@ -124,7 +126,7 @@ export const imageFallbackConfig: ImageFallbackConfig = {
 
 export const umamiConfig: UmamiConfig = {
 	enable: true,
-	baseUrl: "https://umami.acofork.com",
+	baseUrl: `https://u.${customDomain}`,
 	shareId: "CdkXbGgZr6ECKOyK",
 	timezone: "Asia/Shanghai",
 };
