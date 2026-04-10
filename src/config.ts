@@ -61,7 +61,7 @@ export const siteConfig: SiteConfig = {
 	],
 	server: [
 		{ url: "", text: "博客本体节点" },
-		{ url: "https://umami.acofork.com", text: "Umami节点" }
+		{ url: "https://u.2x.nz", text: "Umami节点" }
 	],
 };
 
