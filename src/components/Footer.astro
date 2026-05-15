@@ -1,37 +1,66 @@
 ---
-
 import { profileConfig } from "../config";
 import { url } from "../utils/url-utils";
-
 const currentYear = new Date().getFullYear();
 ---
 
-<!--<div class="border-t border-[var(&#45;&#45;primary)] mx-16 border-dashed py-8 max-w-[var(&#45;&#45;page-width)] flex flex-col items-center justify-center px-6">-->
-<div class="transition border-t border-black/10 dark:border-white/15 my-10 border-dashed mx-32"></div>
-<!--<div class="transition bg-[oklch(92%_0.01_var(&#45;&#45;hue))] dark:bg-black rounded-2xl py-8 mt-4 mb-8 flex flex-col items-center justify-center px-6">-->
-<div class="transition border-dashed border-[oklch(85%_0.01_var(--hue))] dark:border-white/15 rounded-2xl mb-12 flex flex-col items-center justify-center px-6">
-    <div class="transition text-50 text-sm text-center">
-        <a href="https://beian.miit.gov.cn/" target="_blank">鄂ICP备2026018599号</a>
-        <br>
-        &copy; <span id="copyright-year">2025-present</span> <span><a class="transition link text-[var(--primary)] font-medium" href="https://github.com/Ad-closeNN" target="blank">{profileConfig.name}</a></span>. 博客代码 <a href="https://github.com/Ad-closeNN/blog-fuwari" class="transition link text-[var(--primary)] font-medium" target="_blank">已开源</a>
-        <br>
-        <a class="transition link text-[var(--primary)] font-medium" target="_blank" href={url('rss.xml')}>RSS</a> /
-        <a class="transition link text-[var(--primary)] font-medium" target="_blank" href={url('sitemap-index.xml')}>Sitemap</a><br>
+<footer class="mx-auto max-w-4xl px-6">
+  <!-- 分隔线 -->
+  <div class="border-t border-dashed border-black/10 dark:border-white/15 my-8"></div>
+
+  <!-- 版权信息区域 -->
+  <div class="rounded-xl bg-black/5 dark:bg-white/5 p-6 mb-6 transition-all">
+    <div class="text-sm text-center space-y-2 text-black/70 dark:text-white/70">
+      <!-- 备案号 -->
+      <div>
+        <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">
+          鄂ICP备2026018599号
+        </a>
+      </div>
+
+      <!-- 版权 -->
+      <div>
+        &copy; {currentYear}
+        <a class="font-medium text-primary hover:opacity-80 transition-opacity" href="https://github.com/Ad-closeNN" target="_blank" rel="noopener noreferrer">
+          {profileConfig.name}
+        </a>
+        &nbsp;|&nbsp;
+        <a class="font-medium text-primary hover:opacity-80 transition-opacity" href="https://github.com/Ad-closeNN/blog-fuwari" target="_blank" rel="noopener noreferrer">
+          博客开源
+        </a>
+      </div>
+
+      <!-- RSS / 站点地图 -->
+      <div class="space-x-3">
+        <a class="hover:text-primary transition-colors" target="_blank" href={url('rss.xml')}>RSS</a>
+        <a class="hover:text-primary transition-colors" target="_blank" href={url('sitemap-index.xml')}>站点地图</a>
+      </div>
+
+      <!-- 技术栈 -->
+      <div>
         由
-        <a class="transition link text-[var(--primary)] font-medium" target="_blank" href="https://astro.build">Astro</a> 和
-        <a class="transition link text-[var(--primary)] font-medium" target="_blank" href="https://github.com/saicaca/fuwari">Fuwari</a>
+        <a class="text-primary hover:opacity-80 transition-opacity" target="_blank" href="https://astro.build">Astro</a>
+        +
+        <a class="text-primary hover:opacity-80 transition-opacity" target="_blank" href="https://github.com/saicaca/fuwari">Fuwari</a>
         强力驱动
-        <br>
-        由
-        <a class="transition link text-[var(--primary)] font-medium" target="_blank" href="https://www.cloudflare.com">Cloudflare</a>
-        构建并部署至全球 Cloudflare CDN 节点
-    <br>
+      </div>
+
+      <!-- 部署 & CDN -->
+      <div>
+        构建于
+        <a class="text-primary hover:opacity-80 transition-opacity" target="_blank" href="https://www.cloudflare.com">Cloudflare</a>
+        &nbsp;全球节点
+      </div>
     </div>
-    <img
+
+    <!-- Cloudflare Logo -->
+    <div class="flex justify-center mt-4">
+      <img
         src="https://www.cloudflare.com/img/logo-cloudflare-dark.svg"
         alt="Cloudflare"
+        class="h-7 select-none pointer-events-none"
         draggable="false"
-        ondragstart="return false;"
-        style="height: 30px; user-select: none; -webkit-user-drag: none;"
-    >
-</div>
+      >
+    </div>
+  </div>
+</footer>
