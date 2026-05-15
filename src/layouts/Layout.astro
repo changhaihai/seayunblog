@@ -288,9 +288,9 @@ const bannerOffset =
 				var banner = document.getElementById('dns-warning-banner');
 				var closeBtn = document.getElementById('dns-warning-close');
 				if (!banner || !closeBtn) return;
-				if (!localStorage.getItem('dns-warning-dismissed')) {
-					banner.classList.remove('hidden');
-				}
+				//if (!localStorage.getItem('dns-warning-dismissed')) {
+				//	banner.classList.remove('hidden');
+				//}
 				closeBtn.addEventListener('click', function() {
 					banner.classList.add('hidden');
 					localStorage.setItem('dns-warning-dismissed', '1');
