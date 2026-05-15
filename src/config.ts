@@ -10,7 +10,7 @@ import { LinkPreset } from "./types/config";
 
 export const siteConfig: SiteConfig = {
 	title: "海云Blog",
-	subtitle: "Ad_closeNN の 小站，时不时会刷新一些野生东西 | ✨ 欢迎友链 ✨",
+	subtitle: "教程与实践",
 	githubRepo: "https://github.com/Ad-closeNN/blog-fuwari",
 	lang: "zh_CN", // Language code, e.g. 'en', 'zh-CN', 'ja', etc.
 	themeColor: {
@@ -43,7 +43,7 @@ export const siteConfig: SiteConfig = {
 	},
 	favicon: [
 		{
-			src: '/assets/avatar.jpg',
+			src: 'https://pay.seayun.cn/tx.png',
 		}
 		// Leave this array empty to use the default favicon
 		// {
@@ -59,11 +59,11 @@ export const navBarConfig: NavBarConfig = {
 		LinkPreset.Home,
 		LinkPreset.Archive,
 		LinkPreset.About,
-		{
+		/*{
 			name: "友链",
 			url: "/friends/", // Internal links should not include the base path, as it is automatically added
 			external: false, // Show an external link icon and will open in a new tab
-		},
+		},*/
 		{
 			name: "统计信息",
 			url: "https://umami.adclosenn.top/share/jME4HFb9JmfJM5zs", // Internal links should not include the base path, as it is automatically added
