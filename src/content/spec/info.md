@@ -56,7 +56,7 @@
             const fullElement = document.getElementById('github-commit-full'); // 查找 id
 
             // 第一步：调用 API                
-            const githubResponse = await fetch(`https://api.github.com/repos/Ad-closeNN/blog-fuwari/commits?per_page=1`);
+            const githubResponse = await fetch(`https://api.github.com/repos/changhaihai/seayunblog/commits?per_page=1`);
 
             if (!githubResponse.ok) {
                 throw new Error('获取信息失败');
