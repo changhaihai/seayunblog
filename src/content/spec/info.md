@@ -128,7 +128,7 @@
             }
 
             if (link){
-            const gurl = "https://github.com/Ad-closeNN/blog-fuwari/commit/"+Data.sha;
+            const gurl = "https://github.com/changhaihai/seayunblog/commit/"+Data.sha;
                 link.href = gurl;
                 link.title = "("+Data.commit.committer.date + ")" + " " + Data.commit.message;
             }
