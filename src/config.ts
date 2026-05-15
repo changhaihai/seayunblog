@@ -22,7 +22,7 @@ export const siteConfig: SiteConfig = {
 		src: "https://pay.seayun.cn/bj.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
 		position: "center", // Equivalent to object-position, only supports 'top', 'center', 'bottom'. 'center' by default
 		credit: {
-			enable: true, // Display the credit text of the banner image
+			enable: false, // Display the credit text of the banner image
 			text: "Apache | Carbon", // Credit text to be displayed
 			url: "https://httpd.apache.org/docs/2.4/getting-started.html", // (Optional) URL link to the original artwork or artist's page
 		},
@@ -94,17 +94,17 @@ export const profileConfig: ProfileConfig = {
 		{
 			name: "Steam",
 			icon: "fa6-brands:steam",
-			url: "https://steamcommunity.com/id/Ad_closeNN",
+			url: "https://steamcommunity.com/id/Ad_cl",
 		},
 		{
 			name: "Discord",
 			icon: "fa6-brands:discord",
-			url: "https://discord.com/users/1068060784300658688",
+			url: "https://discord.com/users/10680607688",
 		},
 		{
 			name: "GitHub",
 			icon: "fa6-brands:github",
-			url: "https://github.com/Ad-closeNN",
+			url: "https://github.com/changhaihai",
 		},
 		{
 			name: "Email",
