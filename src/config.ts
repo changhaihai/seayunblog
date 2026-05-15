@@ -9,7 +9,7 @@ import type {
 import { LinkPreset } from "./types/config";
 
 export const siteConfig: SiteConfig = {
-	title: "Ad_closeNN 的小站",
+	title: "海云Blog",
 	subtitle: "Ad_closeNN の 小站，时不时会刷新一些野生东西 | ✨ 欢迎友链 ✨",
 	githubRepo: "https://github.com/Ad-closeNN/blog-fuwari",
 	lang: "zh_CN", // Language code, e.g. 'en', 'zh-CN', 'ja', etc.
