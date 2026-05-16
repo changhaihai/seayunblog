@@ -2,7 +2,7 @@
 title: Cloudflare IP优选完全指南：让国内访问速度提升
 published: 2026-05-16
 description: 详细介绍Cloudflare IP优选的原理、多种实现方案以及针对不同服务的配置方法，显著提升网站在国内的访问速度和可用性。
-image: /public/pic/cf-fastip-11.avif
+image: /pic/cf-fastip-optimization/cf-fastip-11.avif
 tags: [Cloudflare, CDN, 网络优化, 教程]
 category: 技术教程
 draft: false
@@ -18,11 +18,11 @@ Cloudflare在国内的访问速度一直是许多开发者的痛点。官方分�
 
 #### 未优选
 
-![未优选效果](/public/pic/098f9ee71ae62603022e542878673e19bdcaf196.avif)
+![未优选效果](/pic/cf-fastip-optimization/098f9ee71ae62603022e542878673e19bdcaf196.avif)
 
 #### 已优选
 
-![已优选效果](/public/pic/cf-fastip-11.avif)
+![已优选效果](/pic/cf-fastip-optimization/cf-fastip-11.avif)
 
 ## 什么是优选
 
@@ -71,7 +71,7 @@ Cloudflare Byoip（Bring Your Own IP），即如果用户自己拥有一个IP或
 
 使用ITDog等工具强制绑定IP访问你的Cloudflare服务，不返回403即可使用。
 
-![ITDog测试](/public/pic/838f685e-3913-4b21-995e-5ee149f4bffa.avif)
+![ITDog测试](/pic/cf-fastip-optimization/838f685e-3913-4b21-995e-5ee149f4bffa.avif)
 
 #### 注意事项
 
@@ -87,11 +87,11 @@ Cloudflare Byoip（Bring Your Own IP），即如果用户自己拥有一个IP或
 1. 如果是Page项目，先将项目转为Worker
 2. 编写Worker路由，填写`你的域名/*`
 
-![Worker路由配置](/public/pic/cf-fastip.avif)
+![Worker路由配置](/pic/cf-fastip-optimization/cf-fastip.avif)
 
 3. 写一条DNS解析到想要的优选域名
 
-![DNS解析](/public/pic/cf-fastip-1.avif)
+![DNS解析](/pic/cf-fastip-optimization/cf-fastip-1.avif)
 
 **优势**：不需要折腾SaaS，不需要多域名。
 
@@ -190,9 +190,9 @@ function getProxyPrefix(hostname) {
 
 创建Worker路由后，写一条DNS解析：
 
-![创建路由](/public/pic/56752d54-26a5-46f1-a7d9-a782ad9874cb.avif)
+![创建路由](/pic/cf-fastip-optimization/56752d54-26a5-46f1-a7d9-a782ad9874cb.avif)
 
-![路由配置](/public/pic/d025398c-39e3-4bd7-8d8f-2ce06a45007d.avif)
+![路由配置](/pic/cf-fastip-optimization/d025398c-39e3-4bd7-8d8f-2ce06a45007d.avif)
 
 ```
 CNAME gitea.afo.im --> 优选域名
@@ -202,19 +202,19 @@ CNAME gitea.afo.im --> 优选域名
 
 1. 创建R2实例
 
-![创建R2实例](/public/pic/cf-fastip-4.avif)
+![创建R2实例](/pic/cf-fastip-optimization/cf-fastip-4.avif)
 
 2. 绑定一个自定义域
 
-![绑定自定义域](/public/pic/cf-fastip-5.avif)
+![绑定自定义域](/pic/cf-fastip-optimization/cf-fastip-5.avif)
 
 3. 前往域名 → 规则 → Cloud Connector
 
-![Cloud Connector](/public/pic/cf-fastip-6.avif)
+![Cloud Connector](/pic/cf-fastip-optimization/cf-fastip-6.avif)
 
-![配置Cloud Connector](/public/pic/cf-fastip-7.avif)
+![配置Cloud Connector](/pic/cf-fastip-optimization/cf-fastip-7.avif)
 
-![Cloud Connector配置](/public/pic/cf-fastip-8.avif)
+![Cloud Connector配置](/pic/cf-fastip-optimization/cf-fastip-8.avif)
 
 4. 写一条解析指向优选域名：
    ```
@@ -229,15 +229,15 @@ Cloudflare SaaS是一个不需要改变域名NS服务器，就可以让其受益
 
 当一个域名被SaaS到一个已经在Cloudflare的域名后，它就完整受益所有Cloudflare服务。如我将 umami.acofork.com SaaS 到 2x.nz，我就可以在 2x.nz 里为 umami.acofork.com 写规则了：
 
-![SaaS配置示例1](/public/pic/cf-saas-1.avif)
+![SaaS配置示例1](/pic/cf-fastip-optimization/cf-saas-1.avif)
 
-![SaaS配置示例2](/public/pic/cf-saas-2.avif)
+![SaaS配置示例2](/pic/cf-fastip-optimization/cf-saas-2.avif)
 
-![SaaS配置示例3](/public/pic/cf-saas-3.avif)
+![SaaS配置示例3](/pic/cf-fastip-optimization/cf-saas-3.avif)
 
 Worker中的路由规则也适用：
 
-![Worker路由规则](/public/pic/cf-saas-4.avif)
+![Worker路由规则](/pic/cf-fastip-optimization/cf-saas-4.avif)
 
 #### SaaS优选步骤
 
@@ -247,25 +247,25 @@ Worker中的路由规则也适用：
 
 1. 新建DNS解析，指向你的源站，开启CF代理
 
-![DNS解析配置](/public/pic/c94c34ee262fb51fb5697226ae0df2d804bf76fe.avif)
+![DNS解析配置](/pic/cf-fastip-optimization/c94c34ee262fb51fb5697226ae0df2d804bf76fe.avif)
 
 2. 前往辅助域名的SSL/TLS → 自定义主机名，设置回退源为第一步的DNS解析域名（推荐HTTP验证）
 
 3. 添加自定义主机名，选择自定义源服务器，填写第一步的域名
 
-![自定义主机名配置](/public/pic/f6170f009c43f7c6bee4c2d29e2db7498fa1d0dc.avif)
+![自定义主机名配置](/pic/cf-fastip-optimization/f6170f009c43f7c6bee4c2d29e2db7498fa1d0dc.avif)
 
 4. 在辅助域名添加一条解析，CNAME到优选节点，不开启CF代理
 
-![优选节点解析](/public/pic/4f9f727b0490e0b33d360a2363c1026003060b29.avif)
+![优选节点解析](/pic/cf-fastip-optimization/4f9f727b0490e0b33d360a2363c1026003060b29.avif)
 
 5. 在主力域名添加解析，域名为自定义主机名，目标为刚才的cdn域名，不开启CF代理
 
-![主力域名解析](/public/pic/6f51cb2a42140a9bf364f88a5715291be616a254.avif)
+![主力域名解析](/pic/cf-fastip-optimization/6f51cb2a42140a9bf364f88a5715291be616a254.avif)
 
 6. 优选完毕，确保优选有效后尝试访问
 
-![优选完成](/public/pic/cf-fastip-10.avif)
+![优选完成](/pic/cf-fastip-optimization/cf-fastip-10.avif)
 
 7. （可选）将cdn子域的NS服务器更改为阿里云、华为云、腾讯云云解析做线路分流解析
 
@@ -289,17 +289,17 @@ Worker中的路由规则也适用：
 2. 将路由域名从指向xxx.worker.dev改为优选域名
 3. 如果是外域，SaaS后再添加路由：
 
-![Worker路由](/public/pic/cf-fastip-12.avif)
+![Worker路由](/pic/cf-fastip-optimization/cf-fastip-12.avif)
 
-![外域路由](/public/pic/cf-fastip-13.avif)
+![外域路由](/pic/cf-fastip-optimization/cf-fastip-13.avif)
 
 ### Cloudflare Tunnel（ZeroTrust）
 
 先参照传统SaaS优选设置完毕，源站即为Cloudflare Tunnel。
 
-![Tunnel配置](/public/pic/cf-fastip-2.avif)
+![Tunnel配置](/pic/cf-fastip-optimization/cf-fastip-2.avif)
 
-![Tunnel规则](/public/pic/cf-fastip-3.avif)
+![Tunnel规则](/pic/cf-fastip-optimization/cf-fastip-3.avif)
 
 接下来需要让最终访问的域名打到Cloudflare Tunnel的流量正确路由。创建一个Tunnel规则，域名为最终访问的域名，源站指定和刚才的一致即可。
 
